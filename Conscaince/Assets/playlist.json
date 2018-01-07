@@ -1,0 +1,45 @@
+﻿{
+  "playList": {
+    "base": [
+      {
+        "title": "مصنف کا ملاحظہ",
+        "mediaUri": "ms-appx:///Assets/Musanif.mp3"
+      },
+      {
+        "title": "Observing The Writer",
+        "mediaUri": "ms-appx:///Assets/Writer.mp3"
+      },
+      {
+        "title": "Silenzio Assordante",
+        "mediaUri": "ms-appx:///Assets/Silenzio-Assordante.mp3"
+      },
+      {
+        "title": "Universe",
+        "mediaUri": "ms-appx:///Assets/Universe.mp3"
+      },
+      {
+        "title": "وجود",
+        "mediaUri": "ms-appx:///Assets/Wujud.mp3"
+      },
+      {
+        "title": "Existence",
+        "mediaUri": "ms-appx:///Assets/Existence.mp3"
+      },
+      {
+        "title": "Les Progrès",
+        "mediaUri": "ms-appx:///Assets/Les-Progres.mp3"
+      },
+      {
+        "title": "On The Road To Be",
+        "mediaUri": "ms-appx:///Assets/On-The-Road.mp3"
+      }
+    ],
+    "interrupt": [
+      {
+        "title": "ازان",
+        "timings": [ "0400", "1220", "1520", "1745", "1910", "1423" ],
+        "mediaUri": "ms-appx:///Assets/Azaan.mp3"
+      }
+    ]
+  }
+}
