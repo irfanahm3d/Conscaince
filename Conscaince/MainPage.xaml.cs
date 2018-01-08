@@ -26,13 +26,7 @@ namespace Conscaince
         /// The audio player service instance.
         /// </summary>
         AudioPlayerService audioService = AudioPlayerService.AudioPlayerInstance;
-
-        /// <summary>
-        /// A list of items to be played for the base audio track
-        /// and the interrupt track
-        /// </summary>
-        AudioList playList;
-
+        
         JsonReader jsonPlaylist = JsonReader.JsonReaderInstance;
 
         public MainPage()
@@ -47,14 +41,12 @@ namespace Conscaince
             
             speechReg = new SpeechRecognizer(SpeechRecognizer.SystemSpeechLanguage);
 
-            this.playList = new AudioList();
             await this.jsonPlaylist.LoadFromApplicationUriAsync(playListUri);
-            await this.playList.CreateAudioPlaybackLists();
-            await this.audioService.InitializeAudioPlayers(this.playList);
+            await this.audioService.InitializeSoundTracks();
 
             //this.playList.BasePlaybackList.CurrentItemChanged += PlayBackItemChange;
 
-            await this.audioService.Play(audioService.Player);
+            //await this.audioService.Play(audioService.Player);
         }
 
         async void SpeakButton_Click(object sender, RoutedEventArgs e)

@@ -8,21 +8,29 @@ namespace Conscaince.TrackSense
 {
     abstract class AAudioTrack
     {
-        public string ItemId { get; set; }
+        public bool AutoPlay { get; set; }
 
-        public string Title { get; set; }
+        public bool Loop { get; set; }
+
+        public string ItemId { get; set; }
 
         public Uri MediaUri { get; set; }
 
+        public string Title { get; set; }
+
+        public double Volume { get; set; }
+
         public AAudioTrack()
         {
-
         }
 
         public AAudioTrack(JsonObject json)
         {
             ItemId = json.GetNamedString("id", Guid.NewGuid().ToString());
             Title = json.GetNamedString("title", string.Empty);
+            Volume = json.GetNamedNumber("volume", 0.5d);
+            AutoPlay = json.GetNamedBoolean("autoplay", false);
+            Loop = json.GetNamedBoolean("loop", false);
 
             if (json.Keys.Contains("mediaUri"))
                 MediaUri = new Uri(json.GetNamedString("mediaUri"));
@@ -40,7 +48,7 @@ namespace Conscaince.TrackSense
             displayProperties.Type = MediaPlaybackType.Music;
             displayProperties.MusicProperties.Title = this.Title;
             playbackItem.ApplyDisplayProperties(displayProperties);
-
+            
             return playbackItem;
         }
     }

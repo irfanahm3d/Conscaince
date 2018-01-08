@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.Media.Playback;
@@ -21,36 +22,36 @@ namespace Conscaince.TrackSense
             }
         }
 
-        /// <summary>
-        /// The base audio track media player
-        /// </summary>
-        public MediaPlayer Player { get; private set; }
+        public List<MediaPlayer> SoundTracks { get; private set; }
 
         /// <summary>
-        /// Plays media that will interrupt the base audio track
+        /// A list of items to be played for the base audio track
+        /// and the interrupt track
         /// </summary>
-        public MediaPlayer Interrupter { get; private set; }
-        
-        //private InterrupterService interrupt;
+        TrackList SoundsList { get; set; }
 
         public AudioPlayerService()
         {
+            this.SoundsList = new TrackList();
+            this.SoundTracks = new List<MediaPlayer>();
         }
 
-        public async Task InitializeAudioPlayers(AudioList audioList)
+        public async Task InitializeSoundTracks()
         {
-            this.Player = new MediaPlayer();
-            this.Player.Volume = maxSound;
-            this.Player.Source = audioList.BasePlaybackList;
+            await this.SoundsList.CreateTrackPlaybackList();
 
-            this.Interrupter = new MediaPlayer();
-            this.Interrupter.AutoPlay = false;
-            this.Interrupter.IsLoopingEnabled = false;
-            this.Interrupter.Source = audioList.InterruptPlaybackList;
-            this.Interrupter.CurrentStateChanged += InterruptAudioPlayStateChange;
-
-            //this.interrupt = new InterrupterService(audioList.InterruptTimings);
-            //this.interrupt.OnTimeTriggered += InterruptAudio;
+            foreach (var track in this.SoundsList.Tracks)
+            {
+                MediaPlayer soundEffectTrack = new MediaPlayer
+                {
+                    AutoPlay = track.AutoPlay,
+                    IsLoopingEnabled = track.Loop,
+                    Source = track.ToPlaybackItem(),
+                    Volume = track.Volume
+                };
+                
+                this.SoundTracks.Add(soundEffectTrack);
+            }
         }
         
         public async Task Play(MediaPlayer player)
@@ -67,59 +68,54 @@ namespace Conscaince.TrackSense
             player.Pause();
         }
 
-        public async Task<bool> ToggleMute()
-        {
-            bool isMuted;
-            if (this.Player.IsMuted)
-            {
-                isMuted = false;
-                this.Player.IsMuted = isMuted;
-                await FadeMedia(1.0d * maxSound, this.Player);
-                await FadeMedia(1.0d * maxSound, this.Interrupter);
-            }
-            else
-            {
-                isMuted = true;
-                await FadeMedia(-1.0d * maxSound, this.Player);
-                this.Player.IsMuted = isMuted;
-                this.Interrupter.Volume = 0.33;
-            }
+        //public async Task<bool> ToggleMute()
+        //{
+        //    bool isMuted;
+        //    if (this.Player.IsMuted)
+        //    {
+        //        isMuted = false;
+        //        this.Player.IsMuted = isMuted;
+        //        await FadeMedia(1.0d * maxSound, this.Player);
+        //        await FadeMedia(1.0d * maxSound, this.Interrupter);
+        //    }
+        //    else
+        //    {
+        //        isMuted = true;
+        //        await FadeMedia(-1.0d * maxSound, this.Player);
+        //        this.Player.IsMuted = isMuted;
+        //        this.Interrupter.Volume = 0.33;
+        //    }
 
-            return isMuted;
-        }
+        //    return isMuted;
+        //}
 
         public void Dispose()
         {
-            this.Player.Dispose();
-        }
-
-        async void InterruptAudio()
-        {
-            await FadeMedia(-1.0d * maxSound, this.Player);
-            this.Player.Pause();
-            this.Interrupter.IsMuted = false;
-            this.Interrupter.Play();
-        }
-
-        void InterruptAudioPlayStateChange(MediaPlayer sender, object args)
-        {
-            // If the media item has completed and is paused then call the 
-            // playstate change handler method to carry out its logic
-            if (sender.PlaybackSession.PlaybackState == MediaPlaybackState.Paused &&
-                sender.PlaybackSession.Position == sender.PlaybackSession.NaturalDuration)
+            foreach (var player in SoundTracks)
             {
-                HandleInterruptAudioPlayStateChangeEvent();
+                player.Dispose();
             }
         }
 
-        async void HandleInterruptAudioPlayStateChangeEvent()
-        {
-            // On completion of the interrupt audio the audio player should resume
-            // playing
-            this.Interrupter.IsMuted = true;
-            this.Player.Play();
-            await FadeMedia(1.0d * maxSound, this.Player);
-        }
+        //void InterruptAudioPlayStateChange(MediaPlayer sender, object args)
+        //{
+        //    // If the media item has completed and is paused then call the 
+        //    // playstate change handler method to carry out its logic
+        //    if (sender.PlaybackSession.PlaybackState == MediaPlaybackState.Paused &&
+        //        sender.PlaybackSession.Position == sender.PlaybackSession.NaturalDuration)
+        //    {
+        //        HandleInterruptAudioPlayStateChangeEvent();
+        //    }
+        //}
+
+        //async void HandleInterruptAudioPlayStateChangeEvent()
+        //{
+        //    // On completion of the interrupt audio the audio player should resume
+        //    // playing
+        //    this.Interrupter.IsMuted = true;
+        //    this.Player.Play();
+        //    await FadeMedia(1.0d * maxSound, this.Player);
+        //}
 
         Task FadeMedia(double fadeType, MediaPlayer player)
         {
