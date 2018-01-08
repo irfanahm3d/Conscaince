@@ -22,7 +22,7 @@ namespace Conscaince.TrackSense
             }
         }
 
-        public List<MediaPlayer> SoundTracks { get; private set; }
+        public IDictionary<string, MediaPlayer> SoundTracks { get; private set; }
 
         /// <summary>
         /// A list of items to be played for the base audio track
@@ -33,7 +33,7 @@ namespace Conscaince.TrackSense
         public AudioPlayerService()
         {
             this.SoundsList = new TrackList();
-            this.SoundTracks = new List<MediaPlayer>();
+            this.SoundTracks = new Dictionary<string, MediaPlayer>();
         }
 
         public async Task InitializeSoundTracks()
@@ -50,22 +50,46 @@ namespace Conscaince.TrackSense
                     Volume = track.Volume
                 };
                 
-                this.SoundTracks.Add(soundEffectTrack);
+                this.SoundTracks.Add(track.Title, soundEffectTrack);
             }
         }
         
-        public async Task Play(MediaPlayer player)
+        /// <summary>
+        /// Plays the track based on the source title.
+        /// </summary>
+        /// <param name="sourceTitle">The title of the source item.</param>
+        /// <returns></returns>
+        public async Task<bool> Play(string sourceTitle)
         {
-            // if the BasePlaybackList set to the Source of player is not set
-            // the play will not work. 
-            // TODO: need to create a check for this.
-            player.Play();
+            bool result = false;
+            MediaPlayer soundEffectTrack;
+            if (this.SoundTracks.TryGetValue(sourceTitle, out soundEffectTrack))
+            {
+                await FadeMedia(1.0d * maxSound, soundEffectTrack);
+                soundEffectTrack.Play();
+                result = true;
+            }
+
+            return result;
         }
-        
-        public async Task Pause(MediaPlayer player)
+
+        /// <summary>
+        /// Pauses the track based on the source title.
+        /// </summary>
+        /// <param name="sourceTitle">The title of the source item.</param>
+        /// <returns></returns>
+        public async Task<bool> Pause(string sourceTitle)
         {
-            await FadeMedia(-1.0d * maxSound, player);
-            player.Pause();
+            bool result = false;
+            MediaPlayer soundEffectTrack;
+            if (this.SoundTracks.TryGetValue(sourceTitle, out soundEffectTrack))
+            {
+                await FadeMedia(-1.0d * maxSound, soundEffectTrack);
+                soundEffectTrack.Pause();
+                result = true;
+            }
+
+            return result;
         }
 
         //public async Task<bool> ToggleMute()
@@ -91,9 +115,9 @@ namespace Conscaince.TrackSense
 
         public void Dispose()
         {
-            foreach (var player in SoundTracks)
+            foreach (var track in SoundTracks.Values)
             {
-                player.Dispose();
+                track.Dispose();
             }
         }
 

@@ -26,7 +26,6 @@ namespace Conscaince.TrackSense
 
         public AAudioTrack(JsonObject json)
         {
-            ItemId = json.GetNamedString("id", Guid.NewGuid().ToString());
             Title = json.GetNamedString("title", string.Empty);
             Volume = json.GetNamedNumber("volume", 0.5d);
             AutoPlay = json.GetNamedBoolean("autoplay", false);
