@@ -95,9 +95,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CoreHub.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PathSense\Action.cs" />
+    <Compile Include="PathSense\AMedium.cs" />
+    <Compile Include="PathSense\AudioMedium.cs" />
+    <Compile Include="PathSense\Node.cs" />
+    <Compile Include="PathSense\NodeTree.cs" />
+    <Compile Include="PathSense\Path.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrackSense\AAudioTrack.cs" />
     <Compile Include="TrackSense\TrackList.cs" />
@@ -109,7 +116,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="Assets\playlist.json" />
+    <Content Include="Assets\audiolist.json" />
     <None Include="Conscaince_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

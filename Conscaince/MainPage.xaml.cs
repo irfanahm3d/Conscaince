@@ -18,16 +18,12 @@ namespace Conscaince
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        const string playListUri = "ms-appx:///Assets/playlist.json";
+        /// <summary>
+        /// The core hub instance.
+        /// </summary>
+        CoreHub coreHub = CoreHub.CoreHubInstance;
 
         SpeechRecognizer speechReg;
-        
-        /// <summary>
-        /// The audio player service instance.
-        /// </summary>
-        AudioPlayerService audioService = AudioPlayerService.AudioPlayerInstance;
-        
-        JsonReader jsonPlaylist = JsonReader.JsonReaderInstance;
 
         public MainPage()
         {
@@ -38,11 +34,10 @@ namespace Conscaince
         public async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("MainPage_Loaded");
+
+            await coreHub.Initialize();
             
             speechReg = new SpeechRecognizer(SpeechRecognizer.SystemSpeechLanguage);
-
-            await this.jsonPlaylist.LoadFromApplicationUriAsync(playListUri);
-            await this.audioService.InitializeSoundTracks();
 
             //this.playList.BasePlaybackList.CurrentItemChanged += PlayBackItemChange;
 
