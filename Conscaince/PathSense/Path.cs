@@ -13,6 +13,9 @@ namespace Conscaince.PathSense
     {
         public IList<Node> UserPath { get; private set; }
 
+        // can be found by the last node the path is on... this might not be necessary.
+        public Node CurrentNode { get; private set; }
+
         public Path()
         {
             this.UserPath = new List<Node>();

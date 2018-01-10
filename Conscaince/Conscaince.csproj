@@ -110,13 +110,14 @@
     <Compile Include="TrackSense\TrackList.cs" />
     <Compile Include="TrackSense\AudioPlayerService.cs" />
     <Compile Include="TrackSense\AudioTrack.cs" />
-    <Compile Include="TrackSense\JsonReader.cs" />
+    <Compile Include="JsonReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
     <Content Include="Assets\audiolist.json" />
+    <Content Include="Assets\nodelist.json" />
     <None Include="Conscaince_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

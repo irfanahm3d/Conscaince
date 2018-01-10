@@ -1,0 +1,64 @@
+﻿{
+  "nodeList": {
+    "nodes": [
+      {
+        "id": "1",
+        "title": "Prime Mover",
+        "metaDescription": "this is the first cause. A test.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Rain",
+            "isTraversing": true
+          },
+          {
+            "type": "audio",
+            "sourceId": "Cars",
+            "isTraversing": true
+          }
+        ],
+        "actions": [
+          {
+            "choice": "yes",
+            "nextNodeId": [ "2" ]
+          },
+          {
+            "choice": "no",
+            "nextNodeId": [ "3" ]
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "title": "Second Guess - Yes",
+        "metaDescription": "Comes right after the first cause when the user chooses yes.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Rain",
+            "isTraversing": true
+          },
+          {
+            "type": "audio",
+            "sourceId": "Cars",
+            "isTraversing": true
+          }
+        ],
+        "actions": [ ]
+      },
+      {
+        "id": "3",
+        "title": "Second Guess - No",
+        "metaDescription": "Comes right after the first cause when the user chooses no.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Cars",
+            "isTraversing": true
+          }
+        ],
+        "actions": [ ]
+      }
+    ]
+  }
+}

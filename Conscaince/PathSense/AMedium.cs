@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Data.Json;
 
 namespace Conscaince.PathSense
 {
     abstract class AMedium
     {
-        public Guid Id { get; private set; }
+        public string Id { get; private set; }
 
         public string MetaDescription { get; private set; }
 
@@ -19,6 +20,14 @@ namespace Conscaince.PathSense
         /// or traverses across multiple nodes.
         /// </summary>
         public bool IsTraversing { get; private set; }
+
+        public async Task PopulateMedium(JsonObject json)
+        {
+            this.Id = json.GetNamedString("id", string.Empty);
+            this.MetaDescription = json.GetNamedString("metaDescription", string.Empty);
+            this.SourceId = json.GetNamedString("sourceId", string.Empty);
+            this.IsTraversing = json.GetNamedBoolean("isTraversing", false);
+        }
 
         /// <summary>
         /// Displays/plays the asset from the source uri.

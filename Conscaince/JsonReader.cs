@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Windows.Data.Json;
 using Windows.Storage;
 
-namespace Conscaince.TrackSense
+namespace Conscaince
 {
     class JsonReader
     {
@@ -25,11 +25,11 @@ namespace Conscaince.TrackSense
 
         public async Task LoadFromApplicationUriAsync(string uriPath)
         {
-            if (String.Compare(uriPath, "audio", StringComparison.OrdinalIgnoreCase) > 0)
+            if (uriPath.IndexOf("audio", StringComparison.OrdinalIgnoreCase) >=0 )
             {
                 await this.LoadAudioList(new Uri(uriPath));
             }
-            else if (String.Compare(uriPath, "node", StringComparison.OrdinalIgnoreCase) > 0)
+            else if (uriPath.IndexOf("node", StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 await this.LoadNodeList(new Uri(uriPath));
             }

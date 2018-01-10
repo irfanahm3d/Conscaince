@@ -33,10 +33,31 @@ namespace Conscaince
 
         JsonReader jsonReader = JsonReader.JsonReaderInstance;
 
+        NodeTree nodeTree = NodeTree.NodeTreeInstance;
+
         public async Task Initialize()
         {
             await this.jsonReader.LoadFromApplicationUriAsync(audioListUri);
             await this.audioService.InitializeSoundTracks();
+
+            // load nodes after all media have been loaded and initialized
+            // from the json files
+            await this.jsonReader.LoadFromApplicationUriAsync(nodeListUri);
+            await this.nodeTree.GenerateNodeTree();
+        }
+
+        public async Task PlayTrack()
+        {
+
+        }
+
+        public async Task PauseTrack()
+        {
+
+        }
+
+        public async Task ControlTrackVolume()
+        {
         }
         
         public async Task BufferMedia(int depth)
