@@ -12,6 +12,8 @@
             <TextBlock x:Name="speechTitle" Text="Hello, world!" FontSize="45" FontFamily="Noto Nastaliq Urdu" Padding="77" Foreground="White" RelativePanel.AlignHorizontalCenterWithPanel="True" HorizontalAlignment="Center"/>
             <Button x:Name="speakButton" Content="Speak" Click="SpeakButton_Click" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="speechTitle" HorizontalAlignment="Center" />
             <Button x:Name="beginButton" Content="Begin" Click="BeginButton_Click" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="speechTitle" RelativePanel.RightOf="speakButton" HorizontalAlignment="Center"/>
+            <Button x:Name="yesButton" Content="Yes" Click="YesButton_Click" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="speakButton" HorizontalAlignment="Center"/>
+            <Button x:Name="noButton" Content="No" Click="NoButton_Click" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="beginButton" RelativePanel.RightOf="yesButton" HorizontalAlignment="Center"/>
         </RelativePanel>
     </Grid>
 </Page>

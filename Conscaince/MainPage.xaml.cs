@@ -8,6 +8,7 @@ using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Conscaince.TrackSense;
+using System.Threading;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -44,11 +45,27 @@ namespace Conscaince
             //await this.audioService.Play(audioService.Player);
         }
 
+        async void YesButton_Click(object sender, RoutedEventArgs e)
+        {
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                coreHub.userInput = yesButton.Content.ToString().ToLower();
+            });
+        }
+
+        async void NoButton_Click(object sender, RoutedEventArgs e)
+        {
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                coreHub.userInput = noButton.Content.ToString().ToLower();
+            });
+        }
+
         async void BeginButton_Click(object sender, RoutedEventArgs e)
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
-                await coreHub.BeginNodeTraversal();
+                await coreHub.TraverseNodesAsync();
             });
         }
 

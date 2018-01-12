@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Conscaince.PathSense;
 using Conscaince.TrackSense;
+using System.Threading;
 
 namespace Conscaince
 {
     class CoreHub
-    {               
+    {
         static CoreHub coreHubInstance;
 
         public static CoreHub CoreHubInstance
@@ -22,7 +23,7 @@ namespace Conscaince
                 return coreHubInstance;
             }
         }
-        
+
         const string audioListUri = "ms-appx:///Assets/audiolist.json";
         const string nodeListUri = "ms-appx:///Assets/nodelist.json";
 
@@ -35,8 +36,11 @@ namespace Conscaince
 
         NodeTree nodeTree = NodeTree.NodeTreeInstance;
 
+        public string userInput { get; set; }
+
         public async Task Initialize()
         {
+            this.ResetInput();
             await this.jsonReader.LoadFromApplicationUriAsync(audioListUri);
             await this.audioService.InitializeSoundTracks();
 
@@ -44,6 +48,11 @@ namespace Conscaince
             // from the json files
             await this.jsonReader.LoadFromApplicationUriAsync(nodeListUri);
             await this.nodeTree.GenerateNodeTree();
+        }
+
+        void ResetInput()
+        {
+            this.userInput = "maybe";
         }
                 
         public async Task BufferMedia(int depth)
@@ -61,43 +70,62 @@ namespace Conscaince
             return string.Empty;
         }
 
-        public async Task BeginNodeTraversal()
+        public async Task TraverseNodesAsync()
+        {
+            await Task.Run(() => TraverseNodeTree());
+        }
+
+        public Task WaitOnUserInputAsync()
+        {
+            return Task.Run(() => Loop());
+        }
+
+        void Loop()
+        {
+            while (String.Equals(userInput, "maybe", StringComparison.OrdinalIgnoreCase))
+            {
+            }
+        }
+
+        async Task TraverseNodeTree()
         {
             // TODO: needs to be looped endlessly until the end of the tree is reached.
-
-            // plays the media
+            
             do
             {
                 // depict media that is referenced by the current node.
                 IList<string> mediaIds = await this.nodeTree.CurrentNode.GetMediaIds();
                 foreach (var mediaId in mediaIds)
                 {
-                    await PlayTrack(mediaId);
+                    PlayTrack(mediaId);
                 };
 
-                await this.nodeTree.MoveNext("no");
+                // await user choice before moving to the next node.
+                await this.WaitOnUserInputAsync();
+
+                this.nodeTree.MoveNext(this.userInput);
+                this.ResetInput();
 
                 // determine media which is no longer relevant and remove them.
                 IList<string> newMediaIds = await this.nodeTree.CurrentNode.GetMediaIds();
                 IList<string> mediaToPause = mediaIds.Except(newMediaIds).ToList();
                 foreach (var mediaId in mediaToPause)
                 {
-                    await PauseTrack(mediaId);
+                    PauseTrack(mediaId);
                 };
 
             } while (true);
 
         }
-
-
+        
         async Task PlayTrack(string mediaId)
         {
-            await this.audioService.Play(mediaId);
+            this.audioService.Play(mediaId);
         }
 
         async Task PauseTrack(string mediaId)
         {
-            await this.audioService.Pause(mediaId);
+            this.audioService.Pause(mediaId);
         }
 
         async Task ControlTrackVolume()
