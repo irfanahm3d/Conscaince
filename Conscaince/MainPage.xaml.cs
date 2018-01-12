@@ -44,6 +44,14 @@ namespace Conscaince
             //await this.audioService.Play(audioService.Player);
         }
 
+        async void BeginButton_Click(object sender, RoutedEventArgs e)
+        {
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                await coreHub.BeginNodeTraversal();
+            });
+        }
+
         async void SpeakButton_Click(object sender, RoutedEventArgs e)
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>

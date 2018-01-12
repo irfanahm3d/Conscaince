@@ -45,21 +45,7 @@ namespace Conscaince
             await this.jsonReader.LoadFromApplicationUriAsync(nodeListUri);
             await this.nodeTree.GenerateNodeTree();
         }
-
-        public async Task PlayTrack()
-        {
-
-        }
-
-        public async Task PauseTrack()
-        {
-
-        }
-
-        public async Task ControlTrackVolume()
-        {
-        }
-        
+                
         public async Task BufferMedia(int depth)
         {
 
@@ -73,6 +59,49 @@ namespace Conscaince
         public async Task<string> GetSourceId()
         {
             return string.Empty;
+        }
+
+        public async Task BeginNodeTraversal()
+        {
+            // TODO: needs to be looped endlessly until the end of the tree is reached.
+
+            // plays the media
+            do
+            {
+                // depict media that is referenced by the current node.
+                IList<string> mediaIds = await this.nodeTree.CurrentNode.GetMediaIds();
+                foreach (var mediaId in mediaIds)
+                {
+                    await PlayTrack(mediaId);
+                };
+
+                await this.nodeTree.MoveNext("no");
+
+                // determine media which is no longer relevant and remove them.
+                IList<string> newMediaIds = await this.nodeTree.CurrentNode.GetMediaIds();
+                IList<string> mediaToPause = mediaIds.Except(newMediaIds).ToList();
+                foreach (var mediaId in mediaToPause)
+                {
+                    await PauseTrack(mediaId);
+                };
+
+            } while (true);
+
+        }
+
+
+        async Task PlayTrack(string mediaId)
+        {
+            await this.audioService.Play(mediaId);
+        }
+
+        async Task PauseTrack(string mediaId)
+        {
+            await this.audioService.Pause(mediaId);
+        }
+
+        async Task ControlTrackVolume()
+        {
         }
     }
 }

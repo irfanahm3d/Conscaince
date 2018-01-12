@@ -28,11 +28,16 @@ namespace Conscaince.PathSense
             }
         }
 
-        public IList<Node> Nodes { get; private set; }
+        IDictionary<string, Node> nodes { get; set; }
+
+        Path traversedNodes { get; set; }
+        
+        public Node CurrentNode { get; private set; }
 
         public NodeTree()
         {
-            this.Nodes = new List<Node>();
+            this.nodes = new Dictionary<string, Node>();
+            this.traversedNodes = new Path();
         }
         
         public async Task GenerateNodeTree()
@@ -41,13 +46,39 @@ namespace Conscaince.PathSense
 
             foreach (var jsonNode in jsonReader.NodeArray)
             {
-                this.Nodes.Add(await LoadNode(jsonNode.GetObject()));
+                Node node = await LoadNode(jsonNode.GetObject());
+                this.nodes.Add(node.Id, node);
+            }
+
+            // sets the starting node to the current node of the tree structure.
+            Node startingNode = null;
+            if (this.nodes.TryGetValue("1", out startingNode))
+            {
+                this.CurrentNode = startingNode;
             }
         }
 
-        public async Task StartTraversal()
+        public async Task MoveNext(string actionChoice)
         {
+            // checks what action has been selected to move to the next node
+            Action action = 
+                this.CurrentNode.Actions.Where(
+                    a => String.Equals(
+                        a.Choice, actionChoice, StringComparison.OrdinalIgnoreCase))
+                        .FirstOrDefault();
 
+            if (action == null)
+            {
+                throw new ArgumentNullException("action is null");
+            }
+
+            Node nextNode = null;
+            if (!this.nodes.TryGetValue(action.NextNodeId[0], out nextNode))
+            {
+                throw new Exception("this was not meant to happen");
+            }
+
+            this.CurrentNode = nextNode;        
         }
 
         async Task<Node> LoadNode(JsonObject json)

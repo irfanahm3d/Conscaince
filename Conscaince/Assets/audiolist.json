@@ -4,28 +4,28 @@
       {
         "title": "مصنف کا ملاحظہ",
         "mediaUri": "ms-appx:///Assets/Musanif.mp3",
-        "autoplay": true,
+        "autoplay": false,
         "loop": true,
         "volume":  0.5
       },
       {
         "title": "Rain",
-        "mediaUri": "ms-appx:///Assets/rain_interior.wav",
-        "autoplay": true,
+        "mediaUri": "ms-appx:///Assets/rain_interior.mp3",
+        "autoplay": false,
         "loop": true,
         "volume": 0.4
       },
       {
-        "title": "Silenzio Assordante",
-        "mediaUri": "ms-appx:///Assets/Silenzio-Assordante.mp3",
-        "autoplay": true,
+        "title": "Traffic",
+        "mediaUri": "ms-appx:///Assets/traffic_outside.mp3",
+        "autoplay": false,
         "loop": false,
-        "volume": 0.5
+        "volume": 0.8
       },
       {
         "title": "On The Road To Be",
         "mediaUri": "ms-appx:///Assets/On-The-Road.mp3",
-        "autoplay": true,
+        "autoplay": false,
         "loop": false,
         "volume": 0.5
       }

@@ -17,7 +17,7 @@ namespace Conscaince.PathSense
 
         public IList<Action> Actions { get; private set; }
 
-        public IList<AMedium> Media { get; private set; }
+        IList<AMedium> Media { get; set; }
 
         public async Task PopulateNode(JsonObject json)
         {
@@ -72,9 +72,17 @@ namespace Conscaince.PathSense
             return medium;
         }
 
-        public async Task PresentMediums()
+        public async Task<IList<string>> GetMediaIds()
         {
+            IList<string> mediaIds = new List<string>();
 
+            foreach (var medium in this.Media)
+            {
+                var audioMedium = medium as AudioMedium;
+                mediaIds.Add(await audioMedium.PresentMedium());
+            }
+
+            return mediaIds;
         }
     }
 }

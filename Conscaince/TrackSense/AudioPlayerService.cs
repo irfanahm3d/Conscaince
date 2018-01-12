@@ -65,8 +65,12 @@ namespace Conscaince.TrackSense
             MediaPlayer soundEffectTrack;
             if (this.SoundTracks.TryGetValue(sourceTitle, out soundEffectTrack))
             {
-                await FadeMedia(1.0d * maxSound, soundEffectTrack);
-                soundEffectTrack.Play();
+                if (soundEffectTrack.PlaybackSession.PlaybackState != MediaPlaybackState.Playing)
+                {
+                    await FadeMedia(1.0d * soundEffectTrack.Volume, soundEffectTrack);
+                    soundEffectTrack.Play();
+                }
+
                 result = true;
             }
 
