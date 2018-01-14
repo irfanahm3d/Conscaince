@@ -8,7 +8,6 @@ namespace Conscaince.TrackSense
 {
     class AudioPlayerService
     {
-        const double maxSound = 0.77d;
         static AudioPlayerService audioPlayerInstance;
 
         public static AudioPlayerService AudioPlayerInstance
@@ -47,9 +46,10 @@ namespace Conscaince.TrackSense
                     AutoPlay = track.AutoPlay,
                     IsLoopingEnabled = track.Loop,
                     Source = track.ToPlaybackItem(),
-                    Volume = track.Volume
+                    Volume = track.Volume             
                 };
-                
+
+                soundEffectTrack.CurrentStateChanged += AudioTrackPlayStateChange;
                 this.SoundTracks.Add(track.Title, soundEffectTrack);
             }
         }
@@ -67,7 +67,7 @@ namespace Conscaince.TrackSense
             {
                 if (soundEffectTrack.PlaybackSession.PlaybackState != MediaPlaybackState.Playing)
                 {
-                    await FadeMedia(1.0d * soundEffectTrack.Volume, soundEffectTrack);
+                    FadeMedia(1.0d * soundEffectTrack.Volume, soundEffectTrack);
                     soundEffectTrack.Play();
                 }
 
@@ -88,34 +88,13 @@ namespace Conscaince.TrackSense
             MediaPlayer soundEffectTrack;
             if (this.SoundTracks.TryGetValue(sourceTitle, out soundEffectTrack))
             {
-                await FadeMedia(-1.0d * maxSound, soundEffectTrack);
+                FadeMedia(-1.0d * soundEffectTrack.Volume, soundEffectTrack);
                 soundEffectTrack.Pause();
                 result = true;
             }
 
             return result;
         }
-
-        //public async Task<bool> ToggleMute()
-        //{
-        //    bool isMuted;
-        //    if (this.Player.IsMuted)
-        //    {
-        //        isMuted = false;
-        //        this.Player.IsMuted = isMuted;
-        //        await FadeMedia(1.0d * maxSound, this.Player);
-        //        await FadeMedia(1.0d * maxSound, this.Interrupter);
-        //    }
-        //    else
-        //    {
-        //        isMuted = true;
-        //        await FadeMedia(-1.0d * maxSound, this.Player);
-        //        this.Player.IsMuted = isMuted;
-        //        this.Interrupter.Volume = 0.33;
-        //    }
-
-        //    return isMuted;
-        //}
 
         public void Dispose()
         {
@@ -125,29 +104,24 @@ namespace Conscaince.TrackSense
             }
         }
 
-        //void InterruptAudioPlayStateChange(MediaPlayer sender, object args)
-        //{
-        //    // If the media item has completed and is paused then call the 
-        //    // playstate change handler method to carry out its logic
-        //    if (sender.PlaybackSession.PlaybackState == MediaPlaybackState.Paused &&
-        //        sender.PlaybackSession.Position == sender.PlaybackSession.NaturalDuration)
-        //    {
-        //        HandleInterruptAudioPlayStateChangeEvent();
-        //    }
-        //}
-
-        //async void HandleInterruptAudioPlayStateChangeEvent()
-        //{
-        //    // On completion of the interrupt audio the audio player should resume
-        //    // playing
-        //    this.Interrupter.IsMuted = true;
-        //    this.Player.Play();
-        //    await FadeMedia(1.0d * maxSound, this.Player);
-        //}
-
-        Task FadeMedia(double fadeType, MediaPlayer player)
+        void AudioTrackPlayStateChange(MediaPlayer sender, object args)
         {
-            double fadeOutSeconds = 5.0d;
+            // If the media item has completed and is paused then call the 
+            // playstate change handler method to carry out its logic
+            if (sender.PlaybackSession.PlaybackState == MediaPlaybackState.Paused &&
+                sender.PlaybackSession.Position == sender.PlaybackSession.NaturalDuration)
+            {
+                HandleInterruptAudioPlayStateChangeEvent();
+            }
+        }
+
+        async void HandleInterruptAudioPlayStateChangeEvent()
+        {
+        }
+
+        async Task FadeMedia(double fadeType, MediaPlayer player)
+        {
+            double fadeOutSeconds = 3.0d;
             Stopwatch watch = new Stopwatch();
             watch.Start();
             while (watch.Elapsed < TimeSpan.FromSeconds(fadeOutSeconds))
@@ -160,8 +134,6 @@ namespace Conscaince.TrackSense
                 }
             }
             watch.Stop();
-
-            return Task.CompletedTask;
         }
     }
 }

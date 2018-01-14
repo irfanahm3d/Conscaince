@@ -3,30 +3,41 @@
     "nodes": [
       {
         "id": "1",
-        "title": "Prime Mover",
-        "metaDescription": "this is the first cause. A test.",
+        "title": "Wake Up",
+        "metaDescription": "Derek wakes up from sleep.",
         "media": [
           {
             "type": "audio",
             "sourceId": "Rain",
             "isTraversing": true
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true
+          },
+          {
+            "type": "audio",
+            "sourceId": "Traffic",
+            "isTraversing": true
+          },
+          {
+            "type": "audio",
+            "sourceId": "Sheets_Rustle",
+            "isTraversing": false
           }
         ],
         "actions": [
           {
-            "choice": "yes",
+            "choice": "n.a",
             "nextNodeId": [ "2" ]
-          },
-          {
-            "choice": "no",
-            "nextNodeId": [ "3" ]
           }
         ]
       },
       {
         "id": "2",
-        "title": "Second Guess - Yes",
-        "metaDescription": "Comes right after the first cause when the user chooses yes.",
+        "title": "Feeling",
+        "metaDescription": "How are you feeling?",
         "media": [
           {
             "type": "audio",
@@ -37,22 +48,131 @@
             "type": "audio",
             "sourceId": "Traffic",
             "isTraversing": true
+          },
+          {
+            "type": "audio",
+            "sourceId": "Face_Rub",
+            "isTraversing": false
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true
+          },
+          {
+            "type": "audio",
+            "sourceId": "Out_of_Bed",
+            "isTraversing": false
           }
         ],
-        "actions": [ ]
+        "actions": [
+          {
+            "choice": "yes",
+            "nextNodeId": [ "3" ]
+          },
+          {
+            "choice": "no",
+            "nextNodeId": [ "4" ]
+          }
+        ]
       },
       {
         "id": "3",
-        "title": "Second Guess - No",
-        "metaDescription": "Comes right after the first cause when the user chooses no.",
+        "title": "Reassure",
+        "metaDescription": "Derek needs reassurance. A philosophical quote is narrated.",
         "media": [
+          {
+            "type": "audio",
+            "sourceId": "Rain",
+            "isTraversing": true
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true
+          },
           {
             "type": "audio",
             "sourceId": "Traffic",
             "isTraversing": true
+          },
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false
           }
         ],
-        "actions": [ ]
+        "actions": [
+          {
+            "choice": "n.a",
+            "nextNodeId": [ "5" ]
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "title": "Motivate",
+        "metaDescription": "Derek needs motivation. A philosophical quote is narrated to give hope.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Rain",
+            "isTraversing": true
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true
+          },
+          {
+            "type": "audio",
+            "sourceId": "Traffic",
+            "isTraversing": true
+          },
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false
+          }
+        ],
+        "actions": [
+          {
+            "choice": "n.a",
+            "nextNodeId": [ "5" ]
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "title": "News",
+        "metaDescription": "Derek is asked if he would like to know the headlines for the day.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Tap_Water",
+            "isTraversing": false
+          },
+          {
+            "type": "audio",
+            "sourceId": "Brushing_Teeth",
+            "isTraversing": true
+          },
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false
+          }
+        ],
+        "actions": [
+          {
+            "choice": "yes",
+            "nextNodeId": [ "6" ]
+          },
+          {
+            "choice": "no",
+            "nextNodeId": [ "7" ]
+          }
+        ]
       }
     ]
   }

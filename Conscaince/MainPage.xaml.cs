@@ -37,12 +37,21 @@ namespace Conscaince
             Debug.WriteLine("MainPage_Loaded");
 
             await coreHub.Initialize();
+            coreHub.CurrentNodeChanged += HasCurrentNodeChanged;
             
             speechReg = new SpeechRecognizer(SpeechRecognizer.SystemSpeechLanguage);
 
             //this.playList.BasePlaybackList.CurrentItemChanged += PlayBackItemChange;
 
             //await this.audioService.Play(audioService.Player);
+        }
+
+        async void HasCurrentNodeChanged(object sender, EventArgs e)
+        {
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                debugTitle.Text = sender.ToString();
+            });
         }
 
         async void YesButton_Click(object sender, RoutedEventArgs e)

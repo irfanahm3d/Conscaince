@@ -117,12 +117,18 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <Content Include="Assets\audiolist.json" />
+    <Content Include="Assets\breathing_calm.mp3" />
+    <Content Include="Assets\brushing_teeth.mp3" />
+    <Content Include="Assets\footsteps_tile.mp3" />
     <Content Include="Assets\nodelist.json" />
     <None Include="Conscaince_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Musanif.mp3" />
+    <Content Include="Assets\out_of_bed.mp3" />
     <Content Include="Assets\rain_interior.mp3" />
+    <Content Include="Assets\sheets_rustling.mp3" />
+    <Content Include="Assets\tap_water.mp3" />
     <Content Include="Assets\traffic_outside.mp3" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

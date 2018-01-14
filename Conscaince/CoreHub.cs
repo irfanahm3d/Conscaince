@@ -36,20 +36,35 @@ namespace Conscaince
 
         NodeTree nodeTree = NodeTree.NodeTreeInstance;
 
+        string currentNodeTitle;
+
+        public event EventHandler CurrentNodeChanged;
+        protected virtual void ReadyPlayerOne(EventArgs e)
+        {
+            CurrentNodeChanged?.Invoke(this.currentNodeTitle, e);
+        }
+
+        void OnCurrentNodeChanged(object sender, EventArgs e)
+        {
+            currentNodeTitle = ((Node)sender).Title;
+            ReadyPlayerOne(new EventArgs());
+        }
+
         public string userInput { get; set; }
 
         public async Task Initialize()
         {
             this.ResetInput();
             await this.jsonReader.LoadFromApplicationUriAsync(audioListUri);
-            await this.audioService.InitializeSoundTracks();
+            this.audioService.InitializeSoundTracks();
 
             // load nodes after all media have been loaded and initialized
             // from the json files
             await this.jsonReader.LoadFromApplicationUriAsync(nodeListUri);
-            await this.nodeTree.GenerateNodeTree();
+            this.nodeTree.CurrentNodeChanged += OnCurrentNodeChanged;
+            this.nodeTree.GenerateNodeTree();
         }
-
+        
         void ResetInput()
         {
             this.userInput = "maybe";
@@ -89,8 +104,7 @@ namespace Conscaince
 
         async Task TraverseNodeTree()
         {
-            // TODO: needs to be looped endlessly until the end of the tree is reached.
-            
+            // TODO: needs to be looped endlessly until the end of the tree is reached.            
             do
             {
                 // depict media that is referenced by the current node.
@@ -100,8 +114,16 @@ namespace Conscaince
                     PlayTrack(mediaId);
                 };
 
+                // if there are more than one actions to choose from then
                 // await user choice before moving to the next node.
-                await this.WaitOnUserInputAsync();
+                if (this.nodeTree.CurrentNode.Actions.Count > 1)
+                {
+                    await this.WaitOnUserInputAsync();
+                }
+                else
+                {
+                    this.userInput = "n.a";
+                }
 
                 this.nodeTree.MoveNext(this.userInput);
                 this.ResetInput();
@@ -121,6 +143,10 @@ namespace Conscaince
         async Task PlayTrack(string mediaId)
         {
             this.audioService.Play(mediaId);
+        }
+
+        void WaitForTrack()
+        {
         }
 
         async Task PauseTrack(string mediaId)

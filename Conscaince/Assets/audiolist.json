@@ -2,11 +2,11 @@
   "audioList": {
     "base": [
       {
-        "title": "مصنف کا ملاحظہ",
-        "mediaUri": "ms-appx:///Assets/Musanif.mp3",
+        "title": "Sheets_Rustle",
+        "mediaUri": "ms-appx:///Assets/sheets_rustling.mp3",
         "autoplay": false,
         "loop": true,
-        "volume":  0.5
+        "volume": 0.5
       },
       {
         "title": "Rain",
@@ -23,18 +23,39 @@
         "volume": 0.8
       },
       {
-        "title": "On The Road To Be",
-        "mediaUri": "ms-appx:///Assets/On-The-Road.mp3",
+        "title": "Breathing",
+        "mediaUri": "ms-appx:///Assets/breathing_calm.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.5
-      }
-    ],
-    "interrupt": [
+      },
       {
-        "title": "ازان",
-        "timings": [ "0400", "1220", "1520", "1745", "1910", "1423" ],
-        "mediaUri": "ms-appx:///Assets/Azaan.mp3"
+        "title": "Out_of_Bed",
+        "mediaUri": "ms-appx:///Assets/out_of_bed.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.5
+      },
+      {
+        "title": "Floor_Walk",
+        "mediaUri": "ms-appx:///Assets/footsteps_tile.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.5
+      },
+      {
+        "title": "Tap_Water",
+        "mediaUri": "ms-appx:///Assets/tap_water.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.5
+      },
+      {
+        "title": "Brushing_Teeth",
+        "mediaUri": "ms-appx:///Assets/brushing_teeth.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.5
       }
     ]
   }

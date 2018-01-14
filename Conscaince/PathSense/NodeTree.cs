@@ -34,6 +34,12 @@ namespace Conscaince.PathSense
         
         public Node CurrentNode { get; private set; }
 
+        public event EventHandler CurrentNodeChanged;
+        protected virtual void OnCurrentNodeChanged(EventArgs e)
+        {
+            CurrentNodeChanged?.Invoke(this.CurrentNode, e);
+        }
+
         public NodeTree()
         {
             this.nodes = new Dictionary<string, Node>();
@@ -55,6 +61,7 @@ namespace Conscaince.PathSense
             if (this.nodes.TryGetValue("1", out startingNode))
             {
                 this.CurrentNode = startingNode;
+                OnCurrentNodeChanged(new EventArgs());
             }
         }
 
@@ -78,7 +85,8 @@ namespace Conscaince.PathSense
                 throw new Exception("this was not meant to happen");
             }
 
-            this.CurrentNode = nextNode;        
+            this.CurrentNode = nextNode;
+            OnCurrentNodeChanged(new EventArgs());
         }
 
         async Task<Node> LoadNode(JsonObject json)
