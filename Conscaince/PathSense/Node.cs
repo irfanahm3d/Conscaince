@@ -18,10 +18,15 @@ namespace Conscaince.PathSense
 
         public IList<Action> Actions { get; private set; }
 
+        public bool IsCompleted { get; set; }
+
+        public int NonTraversingMediaCount { get; private set; }
+
         IList<AMedium> Media { get; set; }
 
         public async Task PopulateNode(JsonObject json)
         {
+            this.IsCompleted = false;
             this.Id = json.GetNamedString("id", string.Empty);
             this.Title = json.GetNamedString("title", string.Empty);
             this.MetaDescription = json.GetNamedString("metaDescription", string.Empty);
@@ -42,7 +47,10 @@ namespace Conscaince.PathSense
             {
                 foreach (var jsonMedium in jsonMedia)
                 {
-                    this.Media.Add(await LoadMedium(jsonMedium.GetObject()));
+                    var medium = await LoadMedium(jsonMedium.GetObject());
+                    this.NonTraversingMediaCount =
+                        !medium.IsTraversing ? this.NonTraversingMediaCount + 1 : this.NonTraversingMediaCount;
+                    this.Media.Add(medium);
                 }
             }
         }

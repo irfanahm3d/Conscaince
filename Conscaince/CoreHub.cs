@@ -58,6 +58,7 @@ namespace Conscaince
             ResetInput();
             await this.jsonReader.LoadFromApplicationUriAsync(audioListUri);
             this.audioService.InitializeSoundTracks();
+            this.audioService.AudioTrackCompleted += HasNodeCompleted;
 
             // load nodes after all media have been loaded and initialized
             // from the json files
@@ -120,18 +121,20 @@ namespace Conscaince
 
         async Task TraverseNodeTree()
         {
+            bool isNext = true;
             // TODO: needs to be looped endlessly until the end of the tree is reached.            
             do
             {
                 IList<AMedium> mediaList = await this.nodeTree.CurrentNode.GetMedia();
                 PlayTracks(mediaList);
 
+                await WaitNodeCompletion();
                 await GetUserInput();
-                this.nodeTree.MoveNext(this.userInput);
+                isNext = await this.nodeTree.MoveNext(this.userInput);
                 ResetInput();
                 
                 PauseTracks(mediaList);
-            } while (true);
+            } while (isNext);
 
         }
 
@@ -176,14 +179,10 @@ namespace Conscaince
                 PauseTrack(media.SourceId);
             };
         }
-        
+
         async Task PlayTrack(string mediaId, bool loop)
         {
             this.audioService.Play(mediaId, loop);
-        }
-
-        void WaitForTrack()
-        {
         }
 
         async Task PauseTrack(string mediaId)
@@ -193,6 +192,19 @@ namespace Conscaince
 
         async Task ControlTrackVolume()
         {
+        }
+
+        Task WaitNodeCompletion()
+        {
+            return Task.Run(() =>
+            {
+                while (!this.nodeTree.CurrentNode.IsCompleted) { }
+            });
+        }
+
+        void HasNodeCompleted(object sender, EventArgs e)
+        {
+            this.nodeTree.DetermineNodeCompletion(true);
         }
     }
 }

@@ -119,6 +119,7 @@
     <Content Include="Assets\audiolist.json" />
     <Content Include="Assets\breathing_calm.mp3" />
     <Content Include="Assets\brushing_teeth.mp3" />
+    <Content Include="Assets\face_rub.mp3" />
     <Content Include="Assets\footsteps_tile.mp3" />
     <Content Include="Assets\nodelist.json" />
     <None Include="Conscaince_TemporaryKey.pfx" />

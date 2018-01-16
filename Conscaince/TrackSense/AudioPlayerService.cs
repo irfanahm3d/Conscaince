@@ -23,6 +23,8 @@ namespace Conscaince.TrackSense
 
         public IDictionary<string, MediaPlayer> SoundTracks { get; private set; }
 
+        public event EventHandler AudioTrackCompleted;
+
         /// <summary>
         /// A list of items to be played for the base audio track
         /// and the interrupt track
@@ -68,11 +70,20 @@ namespace Conscaince.TrackSense
                 if (soundEffectTrack.PlaybackSession.PlaybackState != MediaPlaybackState.Playing)
                 {
                     soundEffectTrack.IsLoopingEnabled = loop;
+                    if (!soundEffectTrack.IsLoopingEnabled)
+                    {
+                        soundEffectTrack.CurrentStateChanged += AudioTrackPlayStateChange;
+                    }
+
                     FadeMedia(1.0d * soundEffectTrack.Volume, soundEffectTrack);
                     soundEffectTrack.Play();
                 }
 
                 result = true;
+            }
+            else
+            {
+                throw new ArgumentException("file not found");
             }
 
             return result;
@@ -104,7 +115,12 @@ namespace Conscaince.TrackSense
                 track.Dispose();
             }
         }
-
+        
+        /// <summary>
+        /// Note: This is enabled only for media players that do not have looping enabled.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         void AudioTrackPlayStateChange(MediaPlayer sender, object args)
         {
             // If the media item has completed and is paused then call the 
@@ -112,12 +128,14 @@ namespace Conscaince.TrackSense
             if (sender.PlaybackSession.PlaybackState == MediaPlaybackState.Paused &&
                 sender.PlaybackSession.Position == sender.PlaybackSession.NaturalDuration)
             {
-                HandleInterruptAudioPlayStateChangeEvent();
+                sender.PlaybackSession.Position = new TimeSpan(0);
+                HandleAudioTrackEnded(sender, args);
             }
         }
 
-        async void HandleInterruptAudioPlayStateChangeEvent()
+        protected void HandleAudioTrackEnded(MediaPlayer sender, object args)
         {
+            AudioTrackCompleted?.Invoke(sender.Source, (EventArgs)args);
         }
 
         async Task FadeMedia(double fadeType, MediaPlayer player)

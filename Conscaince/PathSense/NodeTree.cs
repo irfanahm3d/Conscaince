@@ -33,10 +33,12 @@ namespace Conscaince.PathSense
         Path traversedNodes { get; set; }
         
         public Node CurrentNode { get; private set; }
+        int currentNodeCompleteCount { get; set; }
 
         public event EventHandler CurrentNodeChanged;
         protected virtual void OnCurrentNodeChanged(EventArgs e)
         {
+            this.currentNodeCompleteCount = 0;
             CurrentNodeChanged?.Invoke(this.CurrentNode, e);
         }
 
@@ -44,6 +46,25 @@ namespace Conscaince.PathSense
         {
             this.nodes = new Dictionary<string, Node>();
             this.traversedNodes = new Path();
+            this.currentNodeCompleteCount = 0;
+        }
+
+        public async Task DetermineNodeCompletion(bool hasTrackCompleted)
+        {
+            if (hasTrackCompleted)
+            {
+                this.currentNodeCompleteCount += 1;
+            }
+
+            if (this.currentNodeCompleteCount == this.CurrentNode.NonTraversingMediaCount)
+            {
+                this.CurrentNode.IsCompleted = true;
+            }
+
+            if (this.currentNodeCompleteCount > this.CurrentNode.NonTraversingMediaCount)
+            {
+                throw new ArgumentException("this should not happen");
+            }
         }
         
         public async Task GenerateNodeTree()
@@ -65,8 +86,9 @@ namespace Conscaince.PathSense
             }
         }
 
-        public async Task MoveNext(string actionChoice)
+        public async Task<bool> MoveNext(string actionChoice)
         {
+            bool isNext = true;
             // checks what action has been selected to move to the next node
             Action action = 
                 this.CurrentNode.Actions.Where(
@@ -76,7 +98,7 @@ namespace Conscaince.PathSense
 
             if (action == null)
             {
-                throw new ArgumentNullException("action is null");
+                isNext = false;
             }
 
             Node nextNode = null;
@@ -87,6 +109,8 @@ namespace Conscaince.PathSense
 
             this.CurrentNode = nextNode;
             OnCurrentNodeChanged(new EventArgs());
+
+            return isNext;
         }
 
         async Task<Node> LoadNode(JsonObject json)

@@ -30,6 +30,13 @@
         "volume": 0.5
       },
       {
+        "title": "Face_Rub",
+        "mediaUri": "ms-appx:///Assets/face_rub.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.5
+      },
+      {
         "title": "Out_of_Bed",
         "mediaUri": "ms-appx:///Assets/out_of_bed.mp3",
         "autoplay": false,
