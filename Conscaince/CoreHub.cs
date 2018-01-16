@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Conscaince.PathSense;
 using Conscaince.TrackSense;
 using System.Threading;
+using System.Diagnostics;
 
 namespace Conscaince
 {
@@ -54,7 +55,7 @@ namespace Conscaince
 
         public async Task Initialize()
         {
-            this.ResetInput();
+            ResetInput();
             await this.jsonReader.LoadFromApplicationUriAsync(audioListUri);
             this.audioService.InitializeSoundTracks();
 
@@ -90,16 +91,31 @@ namespace Conscaince
             await Task.Run(() => TraverseNodeTree());
         }
 
-        public Task WaitOnUserInputAsync()
+        async Task GetUserInput()
         {
-            return Task.Run(() => Loop());
+            // if there are more than one actions to choose from then
+            // await user choice before moving to the next node.
+            if (this.nodeTree.CurrentNode.Actions.Count > 1)
+            {
+                await WaitOnUserInputAsync();
+            }
+            else
+            {
+                this.userInput = "n.a";
+            }
         }
 
-        void Loop()
+        Task WaitOnUserInputAsync()
         {
-            while (String.Equals(userInput, "maybe", StringComparison.OrdinalIgnoreCase))
+            return Task.Run(() => 
             {
-            }
+                while (String.Equals(
+                    userInput,
+                    "maybe",
+                    StringComparison.OrdinalIgnoreCase))
+                {
+                }
+            });
         }
 
         async Task TraverseNodeTree()
@@ -107,42 +123,63 @@ namespace Conscaince
             // TODO: needs to be looped endlessly until the end of the tree is reached.            
             do
             {
-                // depict media that is referenced by the current node.
-                IList<string> mediaIds = await this.nodeTree.CurrentNode.GetMediaIds();
-                foreach (var mediaId in mediaIds)
-                {
-                    PlayTrack(mediaId);
-                };
+                IList<AMedium> mediaList = await this.nodeTree.CurrentNode.GetMedia();
+                PlayTracks(mediaList);
 
-                // if there are more than one actions to choose from then
-                // await user choice before moving to the next node.
-                if (this.nodeTree.CurrentNode.Actions.Count > 1)
-                {
-                    await this.WaitOnUserInputAsync();
-                }
-                else
-                {
-                    this.userInput = "n.a";
-                }
-
+                await GetUserInput();
                 this.nodeTree.MoveNext(this.userInput);
-                this.ResetInput();
-
-                // determine media which is no longer relevant and remove them.
-                IList<string> newMediaIds = await this.nodeTree.CurrentNode.GetMediaIds();
-                IList<string> mediaToPause = mediaIds.Except(newMediaIds).ToList();
-                foreach (var mediaId in mediaToPause)
-                {
-                    PauseTrack(mediaId);
-                };
-
+                ResetInput();
+                
+                PauseTracks(mediaList);
             } while (true);
 
         }
-        
-        async Task PlayTrack(string mediaId)
+
+        async Task PlayTracks(IList<AMedium> mediaList)
         {
-            this.audioService.Play(mediaId);
+            IEnumerable<AMedium> zeroTimeMedia = 
+                mediaList.Where(m => m.RelativeStartTime == new TimeSpan(0, 0, 0));
+
+            // immediately plays media that is to be started at 0th time, i.e.
+            // the time relative to the processing of the node media.
+            foreach (var media in zeroTimeMedia)
+            {
+                PlayTrack(media.SourceId, media.IsTraversing);
+            };
+
+            // for media that is to be played after 0th time put them in ascending order
+            // and play them according to the time marked.
+            IList<AMedium> ascendingTimeMedia = 
+                mediaList.Except(zeroTimeMedia).OrderBy(m => m.RelativeStartTime).ToList();
+            
+            Stopwatch watch = new Stopwatch();
+            watch.Start();
+            while (ascendingTimeMedia.Count() != 0)
+            {
+                AMedium relativeMedia = ascendingTimeMedia.First();
+                if (watch.Elapsed >= relativeMedia.RelativeStartTime)
+                {
+                    PlayTrack(relativeMedia.SourceId, relativeMedia.IsTraversing);
+                    ascendingTimeMedia.RemoveAt(0);
+                }
+            }
+            watch.Stop();
+        }
+
+        async Task PauseTracks(IList<AMedium> mediaList)
+        {
+            // determine media which is no longer relevant and remove them.
+            IEnumerable<AMedium> newMediaList = await this.nodeTree.CurrentNode.GetMedia();
+            IEnumerable<AMedium> mediaToPause = mediaList.Except(newMediaList, new MediumComparer());
+            foreach (var media in mediaToPause)
+            {
+                PauseTrack(media.SourceId);
+            };
+        }
+        
+        async Task PlayTrack(string mediaId, bool loop)
+        {
+            this.audioService.Play(mediaId, loop);
         }
 
         void WaitForTrack()

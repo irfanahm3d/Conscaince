@@ -9,9 +9,9 @@ namespace Conscaince.PathSense
 {
     class AudioMedium : AMedium
     {
-        public async Task<string> PresentMedium()
+        public async Task<AudioMedium> PresentMedium()
         {
-            return this.SourceId;
+            return this;
         }
     }
 }

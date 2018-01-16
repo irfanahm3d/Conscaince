@@ -36,14 +36,10 @@ namespace Conscaince
         {
             Debug.WriteLine("MainPage_Loaded");
 
-            await coreHub.Initialize();
             coreHub.CurrentNodeChanged += HasCurrentNodeChanged;
+            await coreHub.Initialize();
             
             speechReg = new SpeechRecognizer(SpeechRecognizer.SystemSpeechLanguage);
-
-            //this.playList.BasePlaybackList.CurrentItemChanged += PlayBackItemChange;
-
-            //await this.audioService.Play(audioService.Player);
         }
 
         async void HasCurrentNodeChanged(object sender, EventArgs e)

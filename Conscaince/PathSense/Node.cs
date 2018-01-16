@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,8 +25,8 @@ namespace Conscaince.PathSense
             this.Id = json.GetNamedString("id", string.Empty);
             this.Title = json.GetNamedString("title", string.Empty);
             this.MetaDescription = json.GetNamedString("metaDescription", string.Empty);
-
             this.Actions = new List<Action>();
+
             var jsonActions = json.GetNamedArray("actions");
             if (jsonActions.Count != 0)
             {
@@ -72,17 +73,17 @@ namespace Conscaince.PathSense
             return medium;
         }
 
-        public async Task<IList<string>> GetMediaIds()
+        public async Task<IList<AMedium>> GetMedia()
         {
-            IList<string> mediaIds = new List<string>();
+            IList<AMedium> mediaList = new List<AMedium>();
 
             foreach (var medium in this.Media)
             {
                 var audioMedium = medium as AudioMedium;
-                mediaIds.Add(await audioMedium.PresentMedium());
+                mediaList.Add(await audioMedium.PresentMedium());
             }
 
-            return mediaIds;
+            return mediaList;
         }
     }
 }

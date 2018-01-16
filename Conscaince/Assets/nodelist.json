@@ -9,22 +9,30 @@
           {
             "type": "audio",
             "sourceId": "Rain",
-            "isTraversing": true
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Breathing",
-            "isTraversing": true
+            "isTraversing": true,
+            "relativeStartTime": "00:00:02",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Traffic",
-            "isTraversing": true
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Sheets_Rustle",
-            "isTraversing": false
+            "isTraversing": false,
+            "relativeStartTime": "00:00:12",
+            "requisites": []
           }
         ],
         "actions": [
@@ -42,27 +50,37 @@
           {
             "type": "audio",
             "sourceId": "Rain",
-            "isTraversing": true
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Traffic",
-            "isTraversing": true
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Face_Rub",
-            "isTraversing": false
+            "isTraversing": false,
+            "relativeStartTime": "00:00:07",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Breathing",
-            "isTraversing": true
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Out_of_Bed",
-            "isTraversing": false
+            "isTraversing": false,
+            "relativeStartTime": "00:00:12",
+            "requisites": []
           }
         ],
         "actions": [
@@ -84,22 +102,30 @@
           {
             "type": "audio",
             "sourceId": "Rain",
-            "isTraversing": true
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Breathing",
-            "isTraversing": true
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Traffic",
-            "isTraversing": true
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
-            "isTraversing": false
+            "isTraversing": false,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
           }
         ],
         "actions": [
@@ -117,22 +143,30 @@
           {
             "type": "audio",
             "sourceId": "Rain",
-            "isTraversing": true
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Breathing",
-            "isTraversing": true
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Traffic",
-            "isTraversing": true
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
-            "isTraversing": false
+            "isTraversing": false,
+            "relativeStartTime": "00:00:08",
+            "requisites": []
           }
         ],
         "actions": [
@@ -150,17 +184,23 @@
           {
             "type": "audio",
             "sourceId": "Tap_Water",
-            "isTraversing": false
+            "isTraversing": false,
+            "relativeStartTime": "00:00:12",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Brushing_Teeth",
-            "isTraversing": true
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
-            "isTraversing": false
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
           }
         ],
         "actions": [

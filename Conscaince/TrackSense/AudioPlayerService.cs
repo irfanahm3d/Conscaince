@@ -59,7 +59,7 @@ namespace Conscaince.TrackSense
         /// </summary>
         /// <param name="sourceTitle">The title of the source item.</param>
         /// <returns></returns>
-        public async Task<bool> Play(string sourceTitle)
+        public async Task<bool> Play(string sourceTitle, bool loop)
         {
             bool result = false;
             MediaPlayer soundEffectTrack;
@@ -67,6 +67,7 @@ namespace Conscaince.TrackSense
             {
                 if (soundEffectTrack.PlaybackSession.PlaybackState != MediaPlaybackState.Playing)
                 {
+                    soundEffectTrack.IsLoopingEnabled = loop;
                     FadeMedia(1.0d * soundEffectTrack.Volume, soundEffectTrack);
                     soundEffectTrack.Play();
                 }
