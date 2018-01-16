@@ -40,7 +40,14 @@ namespace Conscaince
         string currentNodeTitle;
 
         public event EventHandler CurrentNodeChanged;
-        protected virtual void ReadyPlayerOne(EventArgs e)
+        public event EventHandler CurrentNodeCompleted;
+
+        protected virtual void OnCurrentNodeCompleted(EventArgs e)
+        {
+            CurrentNodeCompleted?.Invoke(this.nodeTree.CurrentNode.Actions.Count(), e);
+        }
+
+        protected virtual void InvokeCurrentNodeChanged(EventArgs e)
         {
             CurrentNodeChanged?.Invoke(this.currentNodeTitle, e);
         }
@@ -48,7 +55,7 @@ namespace Conscaince
         void OnCurrentNodeChanged(object sender, EventArgs e)
         {
             currentNodeTitle = ((Node)sender).Title;
-            ReadyPlayerOne(new EventArgs());
+            InvokeCurrentNodeChanged(new EventArgs());
         }
 
         public string userInput { get; set; }
@@ -199,6 +206,7 @@ namespace Conscaince
             return Task.Run(() =>
             {
                 while (!this.nodeTree.CurrentNode.IsCompleted) { }
+                OnCurrentNodeCompleted(new EventArgs());
             });
         }
 

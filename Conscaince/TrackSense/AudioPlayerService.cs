@@ -128,7 +128,8 @@ namespace Conscaince.TrackSense
             if (sender.PlaybackSession.PlaybackState == MediaPlaybackState.Paused &&
                 sender.PlaybackSession.Position == sender.PlaybackSession.NaturalDuration)
             {
-                sender.PlaybackSession.Position = new TimeSpan(0);
+                // this is a hack as the event gets triggered twice for some reason for the same track.
+                sender.PlaybackSession.Position = new TimeSpan(0); 
                 HandleAudioTrackEnded(sender, args);
             }
         }
@@ -145,7 +146,7 @@ namespace Conscaince.TrackSense
             watch.Start();
             while (watch.Elapsed < TimeSpan.FromSeconds(fadeOutSeconds))
             {
-                if (watch.ElapsedMilliseconds % 500 == 0)
+                if (watch.ElapsedMilliseconds % 100 == 0)
                 {
                     double fraction = 1.0d / (fadeOutSeconds * 2) * fadeType;
                     double volumeLevel = player.Volume + fraction;

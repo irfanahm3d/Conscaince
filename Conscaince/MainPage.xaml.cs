@@ -35,18 +35,32 @@ namespace Conscaince
         public async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("MainPage_Loaded");
+            this.ToggleUserButtons(false);
 
-            coreHub.CurrentNodeChanged += HasCurrentNodeChanged;
+            coreHub.CurrentNodeChanged += OnCurrentNodeChanged;
+            coreHub.CurrentNodeCompleted += OnCurrentNodeCompleted;
             await coreHub.Initialize();
             
             speechReg = new SpeechRecognizer(SpeechRecognizer.SystemSpeechLanguage);
         }
 
-        async void HasCurrentNodeChanged(object sender, EventArgs e)
+        async void OnCurrentNodeChanged(object sender, EventArgs e)
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
                 debugTitle.Text = sender.ToString();
+            });
+        }
+
+        async void OnCurrentNodeCompleted(object sender, EventArgs e)
+        {
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            {
+                int actionCount = (int)sender;
+                if (actionCount > 1)
+                {
+                    this.ToggleUserButtons(true);
+                }
             });
         }
 
@@ -55,6 +69,7 @@ namespace Conscaince
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
                 coreHub.userInput = yesButton.Content.ToString().ToLower();
+                this.ToggleUserButtons(false);
             });
         }
 
@@ -63,6 +78,7 @@ namespace Conscaince
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
                 coreHub.userInput = noButton.Content.ToString().ToLower();
+                this.ToggleUserButtons(false);
             });
         }
 
@@ -81,6 +97,12 @@ namespace Conscaince
                 string spokenWords = await RecordSpeechFromMicrophoneAsync();
                 speechTitle.Text = spokenWords;
             });
+        }
+
+        async Task ToggleUserButtons(bool enable)
+        {
+            yesButton.IsEnabled = enable;
+            noButton.IsEnabled = enable;
         }
 
         async Task<string> RecordSpeechFromMicrophoneAsync()
