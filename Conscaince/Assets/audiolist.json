@@ -63,6 +63,146 @@
         "autoplay": false,
         "loop": false,
         "volume": 0.3
+      },
+      {
+        "title": "Brushing_Hair",
+        "mediaUri": "ms-appx:///Assets/brush_hair.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.4
+      },
+      {
+        "title": "Toilet_Use",
+        "mediaUri": "ms-appx:///Assets/toilet.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.3
+      },
+      {
+        "title": "Shower_On",
+        "mediaUri": "ms-appx:///Assets/shower_on.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.3
+      },
+      {
+        "title": "Shower_Running",
+        "mediaUri": "ms-appx:///Assets/shower_running.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.3
+      },
+      {
+        "title": "Shower_Off",
+        "mediaUri": "ms-appx:///Assets/shower_off.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.3
+      },
+      {
+        "title": "Drying",
+        "mediaUri": "ms-appx:///Assets/towel_dry.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.6
+      },
+      {
+        "title": "Wear_Pants",
+        "mediaUri": "ms-appx:///Assets/wear_pants.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.6
+      },
+      {
+        "title": "Wear_Jacket",
+        "mediaUri": "ms-appx:///Assets/wear_jacket.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.6
+      },
+      {
+        "title": "Hangars",
+        "mediaUri": "ms-appx:///Assets/hangars.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.6
+      },
+      {
+        "title": "Car_Keys",
+        "mediaUri": "ms-appx:///Assets/car_keys.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.6
+      },
+      {
+        "title": "Car_Door",
+        "mediaUri": "ms-appx:///Assets/car_door.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.5
+      },
+      {
+        "title": "Car_Start",
+        "mediaUri": "ms-appx:///Assets/car_start.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.6
+      },
+      {
+        "title": "Car_Running",
+        "mediaUri": "ms-appx:///Assets/car_running.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.6
+      },
+      {
+        "title": "Car_Drive",
+        "mediaUri": "ms-appx:///Assets/car_drive.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.6
+      },
+      {
+        "title": "Car_Reverse",
+        "mediaUri": "ms-appx:///Assets/car_reverse.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.6
+      },
+      {
+        "title": "Door",
+        "mediaUri": "ms-appx:///Assets/door.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.5
+      },
+      {
+        "title": "Running",
+        "mediaUri": "ms-appx:///Assets/running_puddles.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.5
+      },
+      {
+        "title": "Bus_Ambience",
+        "mediaUri": "ms-appx:///Assets/bus_ambience.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.5
+      },
+      {
+        "title": "Umbrella_Open",
+        "mediaUri": "ms-appx:///Assets/umbrella_open.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.5
+      },
+      {
+        "title": "Umbrella_Rain",
+        "mediaUri": "ms-appx:///Assets/umbrella_rain.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.5
       }
     ]
   }
