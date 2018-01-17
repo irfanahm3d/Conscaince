@@ -107,6 +107,7 @@
     <Compile Include="PathSense\Path.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrackSense\AAudioTrack.cs" />
+    <Compile Include="TrackSense\MediaTrack.cs" />
     <Compile Include="TrackSense\TrackList.cs" />
     <Compile Include="TrackSense\AudioPlayerService.cs" />
     <Compile Include="TrackSense\AudioTrack.cs" />

@@ -6,21 +6,21 @@
         "mediaUri": "ms-appx:///Assets/sheets_rustling.mp3",
         "autoplay": false,
         "loop": true,
-        "volume": 0.5
+        "volume": 0.6
       },
       {
         "title": "Rain",
         "mediaUri": "ms-appx:///Assets/rain_interior.mp3",
         "autoplay": false,
         "loop": true,
-        "volume": 0.4
+        "volume": 0.3
       },
       {
         "title": "Traffic",
         "mediaUri": "ms-appx:///Assets/traffic_outside.mp3",
         "autoplay": false,
         "loop": false,
-        "volume": 0.8
+        "volume": 0.1
       },
       {
         "title": "Breathing",
@@ -62,7 +62,7 @@
         "mediaUri": "ms-appx:///Assets/brushing_teeth.mp3",
         "autoplay": false,
         "loop": false,
-        "volume": 0.5
+        "volume": 0.3
       }
     ]
   }

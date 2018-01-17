@@ -6,6 +6,12 @@ using Windows.Media.Playback;
 
 namespace Conscaince.TrackSense
 {
+    enum FadeType
+    {
+        FadeIn,
+        FadeOut
+    }
+
     class AudioPlayerService
     {
         static AudioPlayerService audioPlayerInstance;
@@ -21,7 +27,7 @@ namespace Conscaince.TrackSense
             }
         }
 
-        public IDictionary<string, MediaPlayer> SoundTracks { get; private set; }
+        public IDictionary<string, MediaTrack> SoundTracks { get; private set; }
 
         public event EventHandler AudioTrackCompleted;
 
@@ -34,7 +40,7 @@ namespace Conscaince.TrackSense
         public AudioPlayerService()
         {
             this.SoundsList = new TrackList();
-            this.SoundTracks = new Dictionary<string, MediaPlayer>();
+            this.SoundTracks = new Dictionary<string, MediaTrack>();
         }
 
         public async Task InitializeSoundTracks()
@@ -48,11 +54,16 @@ namespace Conscaince.TrackSense
                     AutoPlay = track.AutoPlay,
                     IsLoopingEnabled = track.Loop,
                     Source = track.ToPlaybackItem(),
-                    Volume = track.Volume             
+                    Volume = 0.0d             
                 };
 
                 soundEffectTrack.CurrentStateChanged += AudioTrackPlayStateChange;
-                this.SoundTracks.Add(track.Title, soundEffectTrack);
+                this.SoundTracks.Add(
+                    track.Title,
+                    new MediaTrack(
+                        soundEffectTrack,
+                        track.Loop,
+                        track.Volume));
             }
         }
         
@@ -64,19 +75,19 @@ namespace Conscaince.TrackSense
         public async Task<bool> Play(string sourceTitle, bool loop)
         {
             bool result = false;
-            MediaPlayer soundEffectTrack;
+            MediaTrack soundEffectTrack;
             if (this.SoundTracks.TryGetValue(sourceTitle, out soundEffectTrack))
             {
-                if (soundEffectTrack.PlaybackSession.PlaybackState != MediaPlaybackState.Playing)
+                if (soundEffectTrack.Player.PlaybackSession.PlaybackState != MediaPlaybackState.Playing)
                 {
-                    soundEffectTrack.IsLoopingEnabled = loop;
-                    if (!soundEffectTrack.IsLoopingEnabled)
+                    soundEffectTrack.Player.IsLoopingEnabled = loop;
+                    if (!soundEffectTrack.Player.IsLoopingEnabled)
                     {
-                        soundEffectTrack.CurrentStateChanged += AudioTrackPlayStateChange;
+                        soundEffectTrack.Player.CurrentStateChanged += AudioTrackPlayStateChange;
                     }
 
-                    FadeMedia(1.0d * soundEffectTrack.Volume, soundEffectTrack);
-                    soundEffectTrack.Play();
+                    FadeMedia(FadeType.FadeIn, soundEffectTrack.Player, soundEffectTrack.BaseVolume);
+                    soundEffectTrack.Player.Play();
                 }
 
                 result = true;
@@ -97,11 +108,11 @@ namespace Conscaince.TrackSense
         public async Task<bool> Pause(string sourceTitle)
         {
             bool result = false;
-            MediaPlayer soundEffectTrack;
+            MediaTrack soundEffectTrack;
             if (this.SoundTracks.TryGetValue(sourceTitle, out soundEffectTrack))
             {
-                FadeMedia(-1.0d * soundEffectTrack.Volume, soundEffectTrack);
-                soundEffectTrack.Pause();
+                FadeMedia(FadeType.FadeOut, soundEffectTrack.Player, soundEffectTrack.BaseVolume);
+                soundEffectTrack.Player.Pause();
                 result = true;
             }
 
@@ -112,7 +123,7 @@ namespace Conscaince.TrackSense
         {
             foreach (var track in SoundTracks.Values)
             {
-                track.Dispose();
+                track.Player.Dispose();
             }
         }
         
@@ -139,18 +150,25 @@ namespace Conscaince.TrackSense
             AudioTrackCompleted?.Invoke(sender.Source, (EventArgs)args);
         }
 
-        async Task FadeMedia(double fadeType, MediaPlayer player)
+        async Task FadeMedia(FadeType type, MediaPlayer player, double baseVolume)
         {
-            double fadeOutSeconds = 3.0d;
+            double fadeTime = 4.0d;
             Stopwatch watch = new Stopwatch();
             watch.Start();
-            while (watch.Elapsed < TimeSpan.FromSeconds(fadeOutSeconds))
+            while (watch.Elapsed < TimeSpan.FromSeconds(fadeTime))
             {
                 if (watch.ElapsedMilliseconds % 100 == 0)
                 {
-                    double fraction = 1.0d / (fadeOutSeconds * 2) * fadeType;
-                    double volumeLevel = player.Volume + fraction;
-                    player.Volume = volumeLevel;
+                    double tempTime = 0.0d;
+                    if (type == FadeType.FadeIn)
+                    {
+                        tempTime = watch.Elapsed.TotalSeconds;
+                    }
+                    else if (type == FadeType.FadeOut)
+                    {
+                        tempTime = fadeTime - watch.Elapsed.TotalSeconds;
+                    }
+                    player.Volume = (baseVolume * tempTime) / fadeTime;
                 }
             }
             watch.Stop();
