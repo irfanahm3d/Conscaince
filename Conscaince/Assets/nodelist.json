@@ -213,6 +213,650 @@
             "nextNodeId": [ "7" ]
           }
         ]
+      },
+      {
+        "id": "6",
+        "title": "Snippets",
+        "metaDescription": "Derek is read out the headlines.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Tap_Water",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:12",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Brushing_Teeth",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:10",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Toilet_Use",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:15",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "n.a",
+            "nextNodeId": [ "10" ]
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "title": "Song?",
+        "metaDescription": "Derek is asked if he would like to hear a song instead.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Tap_Water",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:12",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Brushing_Teeth",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:10",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Toilet_Use",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:15",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "yes",
+            "nextNodeId": [ "8" ]
+          },
+          {
+            "choice": "no",
+            "nextNodeId": [ "9" ]
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "title": "Listen",
+        "metaDescription": "Derek listens to the song while using the bathroom.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Tap_Water",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:12",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Brushing_Teeth",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:10",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Toilet_Use",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:15",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "n.a",
+            "nextNodeId": [ "10" ]
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "title": "Brush",
+        "metaDescription": "Derek uses the bathroom.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Tap_Water",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:12",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Brushing_Teeth",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:10",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Toilet_Use",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:15",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "n.a",
+            "nextNodeId": [ "10" ]
+          }
+        ]
+      },
+      {
+        "id": "10",
+        "title": "Shower",
+        "metaDescription": "Derek  steps into the shower.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Shower",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:08",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:03",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "n.a",
+            "nextNodeId": [ "11" ]
+          }
+        ]
+      },
+      {
+        "id": "11",
+        "title": "Showered enough?",
+        "metaDescription": "Derek is told he has showered enough.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Shower",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "yes",
+            "nextNodeId": [ "12" ]
+          },
+          {
+            "choice": "no",
+            "nextNodeId": [ "13" ]
+          }
+        ]
+      },
+      {
+        "id": "12",
+        "title": "Great!",
+        "metaDescription": "Derek is appreciated for conserving water.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:10",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Drying",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:03",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "n.a",
+            "nextNodeId": [ "16" ]
+          }
+        ]
+      },
+      {
+        "id": "13",
+        "title": "Okay, but...",
+        "metaDescription": "Derek is told how he is wasting a precious and rare commodity.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Shower",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "yes",
+            "nextNodeId": [ "16" ]
+          },
+          {
+            "choice": "no",
+            "nextNodeId": [ "15" ]
+          }
+        ]
+      },
+      {
+        "id": "15",
+        "title": "Seriously!?",
+        "metaDescription": "Derek is reprimanded for showering for longer.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Shower",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:20",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Drying",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:15",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "n.a",
+            "nextNodeId": [ "16" ]
+          }
+        ]
+      },
+      {
+        "id": "16",
+        "title": "Dashing",
+        "metaDescription": "Derek is complimented but is told he needs to hurry up to get to work.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Wear_Clothes",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:12",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Brushing_Hair",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:40",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Traffic",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Rain",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "yes",
+            "nextNodeId": [ "17" ]
+          },
+          {
+            "choice": "no",
+            "nextNodeId": [ "18" ]
+          }
+        ]
+      },
+      {
+        "id": "17",
+        "title": "Drive?",
+        "metaDescription": "Derek is questioned for his decision to drive.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Car_Keys",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Traffic",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Rain",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "yes",
+            "nextNodeId": [ "19" ]
+          },
+          {
+            "choice": "no",
+            "nextNodeId": [ "20" ]
+          }
+        ]
+      },
+      {
+        "id": "18",
+        "title": "Blame",
+        "metaDescription": "Derek is told it should not be blamed for his tardiness.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Brushing_Hair",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:08",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Traffic",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Rain",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "n.a",
+            "nextNodeId": [ "17" ]
+          }
+        ]
+      },
+      {
+        "id": "19",
+        "title": "Carbon?",
+        "metaDescription": "Derek is questioned if he wants to add more carbon to the atmosphere.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Traffic",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Rain",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "yes",
+            "nextNodeId": [ "21" ]
+          },
+          {
+            "choice": "no",
+            "nextNodeId": [ "22" ]
+          }
+        ]
+      },
+      {
+        "id": "20",
+        "title": "Bus-Umbrella",
+        "metaDescription": "Derek is lauded and told to hurry to the bus with his umbrella.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Door",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:12",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Running",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:40",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Traffic",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Rain",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Bus_Crowd",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:55",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Bus_door",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:50",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Umbrella_Open",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:30",
+            "requisites": []
+          }
+        ],
+        "actions": []
+      },
+      {
+        "id": "21",
+        "title": "Drive along",
+        "metaDescription": "Derek is reprimanded and told to stick to his choice of driving.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Door",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:12",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Car_Start",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:40",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Traffic",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Rain",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Car_Drive",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:50",
+            "requisites": []
+          }
+        ],
+        "actions": []
+      },
+      {
+        "id": "22",
+        "title": "Sense!",
+        "metaDescription": "Derek is told he finally makes sense and takes the bus.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Door",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:12",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Running",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:40",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Traffic",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Rain",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Bus_Crowd",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:55",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Bus_door",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:50",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Umbrella_Open",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:30",
+            "requisites": []
+          }
+        ],
+        "actions": []
       }
     ]
   }
