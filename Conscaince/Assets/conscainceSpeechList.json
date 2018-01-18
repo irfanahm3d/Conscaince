@@ -1,0 +1,86 @@
+﻿{
+  "aiSpeechList": {
+    "dialogue": [
+      {
+        "title": "ai:Good_Morning",
+        "text": "Good Morning Derek! It is time to wake up."
+      },
+      {
+        "title": "ai:Feeling",
+        "text": "How are you feeling today?"
+      },
+      {
+        "title": "ai:Reassure",
+        "text": "Ambition is the path to success. Persistence is the vehicle you arrive in - Bill Bradley. Oh, what inspiration to start the day!"
+      },
+      {
+        "title": "ai:Motivate",
+        "text": "Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars to change the world - Harriet Tubman."
+      },
+      {
+        "title": "ai:News",
+        "text": "Would you be interested in hearing today's news?"
+      },
+      {
+        "title": "ai:Snippets",
+        "text": ""
+      },
+      {
+        "title": "ai:Song?",
+        "text": "Alright. That's fine. How about your favorite music?"
+      },
+      {
+        "title": "ai:Showered_Enough?",
+        "text": "Don't you think you have showered long enough?"
+      },
+      {
+        "title": "ai:Great",
+        "text": "Very good Derek! Did you know, a 5 minute shower uses 100 litres of water, but with a reduced-flow showerhead less than half is used. Good thing we have the reduced-flow!"
+      },
+      {
+        "title": "ai:Alright",
+        "text": "That's alright. But did you know 2.5 billion people around the world don't have access to improved sanitation? I'm glad we can enjoy a shower with clean, fresh water."
+      },
+      {
+        "title": "ai:Seriously!",
+        "text": "Okay seriously! You have showered enough!"
+      },
+      {
+        "title": "ai:WHO",
+        "text": "According to the Joint Monitoring Programme report of WHO and UNICEF 844 million people don’t have clean water! And you feel the best use of it is to drain it."
+      },
+      {
+        "title": "ai:Benjamin",
+        "text": "When the well's dry, we know the worth of water – Benjamin Franklin."
+      },
+      {
+        "title": "ai:Dashing",
+        "text": "Yes! You look very charming! Perhaps you want to hurry up though? You are running late for work."
+      },
+      {
+        "title": "ai:Drive?",
+        "text": "You sure you want to drive to work?"
+      },
+      {
+        "title": "ai:Blame",
+        "text": "Your call! But don't go around blaming me for your tardiness like last time."
+      },
+      {
+        "title": "ai:Carbon?",
+        "text": "You'll be adding greenhouse gases to the atmosphere that we all have been striving to reduce. You sure you want that Derek?"
+      },
+      {
+        "title": "ai:Bus_Umbrella",
+        "text": "Great! If you run out the door you'll... no! Forget the coffee. It's bad for you anyway. Remember the diarrhea it caused? Let's get going before we miss the bus. Oh, don't forget your umbrella.... you're welcome!"
+      },
+      {
+        "title": "ai:Car",
+        "text": "The car is only meant for emergencies and... oh... so you're not going to heed my advice? I see. This will go down in your report. Nope. Too late. Drive along now!"
+      },
+      {
+        "title": "ai:Finally",
+        "text": "Finally! Talked some sense into you! Now let's grab that bus before we miss it!"
+      }
+    ]
+  }
+}

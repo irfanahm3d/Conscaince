@@ -22,6 +22,7 @@ namespace Conscaince
 
         public JsonArray BaseTrackArray { get; private set; }
         public JsonArray NodeArray { get; private set; }
+        public JsonArray SpeechArray { get; private set; }
 
         public async Task LoadFromApplicationUriAsync(string uriPath)
         {
@@ -32,6 +33,10 @@ namespace Conscaince
             else if (uriPath.IndexOf("node", StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 await this.LoadNodeList(new Uri(uriPath));
+            }
+            else if (uriPath.IndexOf("speech", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                await this.LoadAiSpeechList(new Uri(uriPath));
             }
         }
 
@@ -56,6 +61,14 @@ namespace Conscaince
             json = json.GetNamedObject("nodeList");
 
             this.NodeArray = json["nodes"].GetArray();
+        }
+
+        async Task LoadAiSpeechList(Uri uri)
+        {
+            JsonObject json = await LoadJson(uri);
+            json = json.GetNamedObject("aiSpeechList");
+
+            this.SpeechArray = json["dialogue"].GetArray();
         }
     }    
 }

@@ -24,7 +24,7 @@ namespace Conscaince
         /// </summary>
         CoreHub coreHub = CoreHub.CoreHubInstance;
 
-        SpeechRecognizer speechReg;
+        UserInput input = UserInput.UserInputInstance;
 
         public MainPage()
         {
@@ -39,9 +39,7 @@ namespace Conscaince
 
             coreHub.CurrentNodeChanged += OnCurrentNodeChanged;
             coreHub.CurrentNodeCompleted += OnCurrentNodeCompleted;
-            await coreHub.Initialize();
-            
-            speechReg = new SpeechRecognizer(SpeechRecognizer.SystemSpeechLanguage);
+            await coreHub.Initialize();            
         }
 
         async void OnCurrentNodeChanged(object sender, EventArgs e)
@@ -90,57 +88,10 @@ namespace Conscaince
             });
         }
 
-        async void SpeakButton_Click(object sender, RoutedEventArgs e)
-        {
-            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
-            {
-                string spokenWords = await RecordSpeechFromMicrophoneAsync();
-                speechTitle.Text = spokenWords;
-            });
-        }
-
         async Task ToggleUserButtons(bool enable)
         {
             yesButton.IsEnabled = enable;
             noButton.IsEnabled = enable;
-        }
-
-        async Task<string> RecordSpeechFromMicrophoneAsync()
-        {
-            string recognizedText = string.Empty;
-
-            // the languages supported for grammars (SRGS, word lists, etc)
-            //List<Language> languagesForGrammars =
-            //       SpeechRecognizer.SupportedGrammarLanguages.ToList();
-
-            using (SpeechRecognizer recognizer = new SpeechRecognizer(SpeechRecognizer.SystemSpeechLanguage))
-            {
-                await recognizer.CompileConstraintsAsync();
-
-                SpeechRecognitionResult result = await recognizer.RecognizeAsync();
-                StringBuilder stringBuilder = new StringBuilder();
-
-                if (result.Status == SpeechRecognitionResultStatus.Success)
-                {
-                    if (result.Confidence == SpeechRecognitionConfidence.High)
-                    {
-                        stringBuilder.Append("We are confident you said '{result.Text}'");
-                    }
-                    else
-                    {
-                        IReadOnlyList<SpeechRecognitionResult> alternatives =
-                        result.GetAlternates(3); // max number wanted
-
-                        foreach (var option in alternatives)
-                        {
-                            stringBuilder.AppendLine("We are { option.RawConfidence * 100:N2}% confident you said '{option.Text}'");
-                        }
-                    }
-
-                    recognizedText = stringBuilder.ToString();
-                }
-            }
-            return (recognizedText);
         }
     }
 }

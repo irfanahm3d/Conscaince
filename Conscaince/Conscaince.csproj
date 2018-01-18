@@ -99,6 +99,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TrackSense\Synthesizer.cs" />
     <Compile Include="PathSense\Action.cs" />
     <Compile Include="PathSense\AMedium.cs" />
     <Compile Include="PathSense\AudioMedium.cs" />
@@ -108,10 +109,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrackSense\AAudioTrack.cs" />
     <Compile Include="TrackSense\MediaTrack.cs" />
+    <Compile Include="TrackSense\SynthTrack.cs" />
     <Compile Include="TrackSense\TrackList.cs" />
     <Compile Include="TrackSense\AudioPlayerService.cs" />
     <Compile Include="TrackSense\AudioTrack.cs" />
     <Compile Include="JsonReader.cs" />
+    <Compile Include="UserInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -133,6 +136,7 @@
     <Content Include="Assets\footsteps_tile.mp3" />
     <Content Include="Assets\hangars.mp3" />
     <Content Include="Assets\nodelist.json" />
+    <Content Include="Assets\conscainceSpeechList.json" />
     <None Include="Conscaince_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

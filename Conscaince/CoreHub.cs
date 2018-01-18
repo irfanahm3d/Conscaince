@@ -26,6 +26,7 @@ namespace Conscaince
         }
 
         const string audioListUri = "ms-appx:///Assets/audiolist.json";
+        const string aiSpeechListUri = "ms-appx:///Assets/conscainceSpeechList.json";
         const string nodeListUri = "ms-appx:///Assets/nodelist.json";
 
         /// <summary>
@@ -36,6 +37,8 @@ namespace Conscaince
         JsonReader jsonReader = JsonReader.JsonReaderInstance;
 
         NodeTree nodeTree = NodeTree.NodeTreeInstance;
+
+        UserInput input = UserInput.UserInputInstance;
 
         string currentNodeTitle;
 
@@ -64,8 +67,10 @@ namespace Conscaince
         {
             ResetInput();
             await this.jsonReader.LoadFromApplicationUriAsync(audioListUri);
+            await this.jsonReader.LoadFromApplicationUriAsync(aiSpeechListUri);
             this.audioService.InitializeSoundTracks();
             this.audioService.AudioTrackCompleted += HasNodeCompleted;
+
 
             // load nodes after all media have been loaded and initialized
             // from the json files
@@ -76,7 +81,7 @@ namespace Conscaince
         
         void ResetInput()
         {
-            this.userInput = "maybe";
+            this.userInput = string.Empty;
         }
                 
         public async Task BufferMedia(int depth)
@@ -105,6 +110,7 @@ namespace Conscaince
             // await user choice before moving to the next node.
             if (this.nodeTree.CurrentNode.Actions.Count > 1)
             {
+                this.userInput = string.Empty;
                 await WaitOnUserInputAsync();
             }
             else
@@ -115,13 +121,24 @@ namespace Conscaince
 
         Task WaitOnUserInputAsync()
         {
-            return Task.Run(() => 
+            return Task.Run(async () =>
             {
-                while (String.Equals(
-                    userInput,
-                    "maybe",
-                    StringComparison.OrdinalIgnoreCase))
+                while (true)
                 {
+                    //userInput = await input.RecordSpeechFromMicrophoneAsync();
+
+                    if (String.IsNullOrEmpty(this.userInput))
+                    {
+                        // i did not quite hear that
+                    }
+                    else if (String.Equals(this.userInput, "maybe", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // this is an unacceptable response
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
             });
         }

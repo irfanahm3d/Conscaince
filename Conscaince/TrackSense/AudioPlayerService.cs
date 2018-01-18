@@ -35,36 +35,21 @@ namespace Conscaince.TrackSense
         /// A list of items to be played for the base audio track
         /// and the interrupt track
         /// </summary>
-        TrackList SoundsList { get; set; }
+        TrackList soundsList { get; set; }
+
+        Synthesizer aiNarrator { get; set; }
 
         public AudioPlayerService()
         {
-            this.SoundsList = new TrackList();
+            this.aiNarrator = new Synthesizer();
+            this.soundsList = new TrackList();
             this.SoundTracks = new Dictionary<string, MediaTrack>();
         }
 
         public async Task InitializeSoundTracks()
         {
-            await this.SoundsList.CreateTrackPlaybackList();
-
-            foreach (var track in this.SoundsList.Tracks)
-            {
-                MediaPlayer soundEffectTrack = new MediaPlayer
-                {
-                    AutoPlay = track.AutoPlay,
-                    IsLoopingEnabled = track.Loop,
-                    Source = track.ToPlaybackItem(),
-                    Volume = 0.0d             
-                };
-
-                soundEffectTrack.CurrentStateChanged += AudioTrackPlayStateChange;
-                this.SoundTracks.Add(
-                    track.Title,
-                    new MediaTrack(
-                        soundEffectTrack,
-                        track.Loop,
-                        track.Volume));
-            }
+            this.InitializeSoundEffects();
+            this.InitializeSpeechSynthesis();
         }
         
         /// <summary>
@@ -124,6 +109,54 @@ namespace Conscaince.TrackSense
             foreach (var track in SoundTracks.Values)
             {
                 track.Player.Dispose();
+            }
+        }
+
+        async Task InitializeSoundEffects()
+        {
+            await this.soundsList.CreateTrackPlaybackList();
+
+            foreach (var track in this.soundsList.Tracks)
+            {
+                MediaPlayer soundEffectTrack = new MediaPlayer
+                {
+                    AutoPlay = track.AutoPlay,
+                    IsLoopingEnabled = track.Loop,
+                    Source = await track.ToPlaybackItem(),
+                    Volume = 0.0d
+                };
+
+                soundEffectTrack.CurrentStateChanged += AudioTrackPlayStateChange;
+                this.SoundTracks.Add(
+                    track.Title,
+                    new MediaTrack(
+                        soundEffectTrack,
+                        track.Loop,
+                        track.Volume));
+            }
+        }
+
+        async Task InitializeSpeechSynthesis()
+        {
+            await this.aiNarrator.CreateSynthesizedVoicePlaybackList();
+
+            foreach (var track in this.aiNarrator.Speeches)
+            {
+                MediaPlayer synthTrack = new MediaPlayer
+                {
+                    AutoPlay = false,
+                    IsLoopingEnabled = false,
+                    Source = await track.ToPlaybackItem(),
+                    Volume = 0.0d
+                };
+
+                synthTrack.CurrentStateChanged += AudioTrackPlayStateChange;
+                this.SoundTracks.Add(
+                    track.Title,
+                    new MediaTrack(
+                        synthTrack,
+                        false,
+                        0.4));
             }
         }
         

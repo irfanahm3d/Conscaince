@@ -8,6 +8,13 @@
         "media": [
           {
             "type": "audio",
+            "sourceId": "ai:Good_Morning",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:02",
+            "requisites": []
+          },
+          {
+            "type": "audio",
             "sourceId": "Rain",
             "isTraversing": true,
             "relativeStartTime": "",
@@ -24,7 +31,7 @@
             "type": "audio",
             "sourceId": "Traffic",
             "isTraversing": true,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:02",
             "requisites": []
           },
           {
@@ -47,6 +54,13 @@
         "title": "Feeling",
         "metaDescription": "How are you feeling?",
         "media": [
+          {
+            "type": "audio",
+            "sourceId": "ai:Feeling",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:01",
+            "requisites": []
+          },
           {
             "type": "audio",
             "sourceId": "Rain",
@@ -101,6 +115,13 @@
         "media": [
           {
             "type": "audio",
+            "sourceId": "ai:Reassure",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:02",
+            "requisites": []
+          },
+          {
+            "type": "audio",
             "sourceId": "Rain",
             "isTraversing": true,
             "relativeStartTime": "",
@@ -140,6 +161,13 @@
         "title": "Motivate",
         "metaDescription": "Derek needs motivation. A philosophical quote is narrated to give hope.",
         "media": [
+          {
+            "type": "audio",
+            "sourceId": "ai:Motivate",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:02",
+            "requisites": []
+          },
           {
             "type": "audio",
             "sourceId": "Rain",
@@ -183,6 +211,13 @@
         "media": [
           {
             "type": "audio",
+            "sourceId": "ai:News",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
             "sourceId": "Tap_Water",
             "isTraversing": false,
             "relativeStartTime": "00:00:12",
@@ -219,6 +254,13 @@
         "title": "Snippets",
         "metaDescription": "Derek is read out the headlines.",
         "media": [
+          {
+            "type": "audio",
+            "sourceId": "ai:Snippets",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:01",
+            "requisites": []
+          },
           {
             "type": "audio",
             "sourceId": "Tap_Water",
@@ -260,6 +302,13 @@
         "title": "Song?",
         "metaDescription": "Derek is asked if he would like to hear a song instead.",
         "media": [
+          {
+            "type": "audio",
+            "sourceId": "ai:Song?",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
           {
             "type": "audio",
             "sourceId": "Tap_Water",
@@ -305,6 +354,13 @@
         "title": "Listen",
         "metaDescription": "Derek listens to the song while using the bathroom.",
         "media": [
+          {
+            "type": "audio",
+            "sourceId": "Song",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
           {
             "type": "audio",
             "sourceId": "Tap_Water",
@@ -423,6 +479,13 @@
         "media": [
           {
             "type": "audio",
+            "sourceId": "ai:Showered_Enough?",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
             "sourceId": "Shower_Running",
             "isTraversing": true,
             "relativeStartTime": "",
@@ -445,6 +508,20 @@
         "title": "Great!",
         "metaDescription": "Derek is appreciated for conserving water.",
         "media": [
+          {
+            "type": "audio",
+            "sourceId": "Shower_Off",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "ai:Great",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
@@ -474,6 +551,13 @@
         "media": [
           {
             "type": "audio",
+            "sourceId": "ai:Alright",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
             "sourceId": "Shower_Running",
             "isTraversing": true,
             "relativeStartTime": "",
@@ -496,6 +580,27 @@
         "title": "Seriously!?",
         "metaDescription": "Derek is reprimanded for showering for longer.",
         "media": [
+          {
+            "type": "audio",
+            "sourceId": "ai:Seriously!",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "ai:WHO",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:10",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "ai:Benjamin",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:20",
+            "requisites": []
+          },
           {
             "type": "audio",
             "sourceId": "Shower_Off",
@@ -532,6 +637,13 @@
         "media": [
           {
             "type": "audio",
+            "sourceId": "ai:Dashing",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
             "sourceId": "Floor_Walk",
             "isTraversing": false,
             "relativeStartTime": "",
@@ -541,28 +653,28 @@
             "type": "audio",
             "sourceId": "Wear_Pants",
             "isTraversing": false,
-            "relativeStartTime": "00:00:22",
+            "relativeStartTime": "00:00:15",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Wear_Jacket",
             "isTraversing": false,
-            "relativeStartTime": "00:00:30",
+            "relativeStartTime": "00:00:22",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Hangars",
             "isTraversing": false,
-            "relativeStartTime": "00:00:12",
+            "relativeStartTime": "00:00:08",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Brushing_Hair",
             "isTraversing": true,
-            "relativeStartTime": "00:00:40",
+            "relativeStartTime": "00:00:35",
             "requisites": []
           },
           {
@@ -596,6 +708,13 @@
         "title": "Drive?",
         "metaDescription": "Derek is questioned for his decision to drive.",
         "media": [
+          {
+            "type": "audio",
+            "sourceId": "ai:Drive?",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },  
           {
             "type": "audio",
             "sourceId": "Car_Keys",
@@ -636,9 +755,16 @@
         "media": [
           {
             "type": "audio",
+            "sourceId": "ai:Blame",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
             "sourceId": "Brushing_Hair",
             "isTraversing": true,
-            "relativeStartTime": "00:00:08",
+            "relativeStartTime": "00:00:03",
             "requisites": []
           },
           {
@@ -668,6 +794,13 @@
         "title": "Carbon?",
         "metaDescription": "Derek is questioned if he wants to add more carbon to the atmosphere.",
         "media": [
+          {
+            "type": "audio",
+            "sourceId": "ai:Carbon?",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
@@ -706,6 +839,13 @@
         "title": "Bus-Umbrella",
         "metaDescription": "Derek is lauded and told to hurry to the bus with his umbrella.",
         "media": [
+          {
+            "type": "audio",
+            "sourceId": "ai:Bus_Umbrella",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
@@ -770,6 +910,13 @@
         "title": "Drive along",
         "metaDescription": "Derek is reprimanded and told to stick to his choice of driving.",
         "media": [
+          {
+            "type": "audio",
+            "sourceId": "ai:Car",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
@@ -841,6 +988,13 @@
         "title": "Sense!",
         "metaDescription": "Derek is told he finally makes sense and takes the bus.",
         "media": [
+          {
+            "type": "audio",
+            "sourceId": "ai:Finally",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
