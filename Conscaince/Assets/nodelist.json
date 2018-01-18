@@ -864,7 +864,7 @@
             "type": "audio",
             "sourceId": "Running",
             "isTraversing": true,
-            "relativeStartTime": "00:00:40",
+            "relativeStartTime": "00:00:17",
             "requisites": []
           },
           {
@@ -883,23 +883,23 @@
           },
           {
             "type": "audio",
-            "sourceId": "Bus_Crowd",
+            "sourceId": "Bus_Ambience",
             "isTraversing": false,
-            "relativeStartTime": "00:00:55",
-            "requisites": []
-          },
-          {
-            "type": "audio",
-            "sourceId": "Bus_door",
-            "isTraversing": true,
-            "relativeStartTime": "00:00:50",
+            "relativeStartTime": "00:00:30",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Umbrella_Open",
-            "isTraversing": true,
-            "relativeStartTime": "00:00:30",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:15",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Umbrella_Rain",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:32",
             "requisites": []
           }
         ],
@@ -1012,7 +1012,7 @@
           {
             "type": "audio",
             "sourceId": "Running",
-            "isTraversing": true,
+            "isTraversing": false,
             "relativeStartTime": "00:00:40",
             "requisites": []
           },
@@ -1033,22 +1033,8 @@
           {
             "type": "audio",
             "sourceId": "Bus_Ambience",
-            "isTraversing": true,
+            "isTraversing": false,
             "relativeStartTime": "00:00:50",
-            "requisites": []
-          },
-          {
-            "type": "audio",
-            "sourceId": "Umbrella_Open",
-            "isTraversing": true,
-            "relativeStartTime": "00:00:36",
-            "requisites": []
-          },
-          {
-            "type": "audio",
-            "sourceId": "Umbrella_Rain",
-            "isTraversing": true,
-            "relativeStartTime": "00:00:39",
             "requisites": []
           }
         ],
