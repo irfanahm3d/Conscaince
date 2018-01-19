@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.Media.Playback;
+﻿using Windows.Media.Playback;
 
 namespace Conscaince.TrackSense
 {
@@ -17,7 +12,6 @@ namespace Conscaince.TrackSense
 
         public MediaTrack()
         {
-
         }
 
         public MediaTrack(MediaPlayer player, bool loop, double volume)

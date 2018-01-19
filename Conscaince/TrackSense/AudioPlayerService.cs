@@ -170,7 +170,9 @@ namespace Conscaince.TrackSense
             // If the media item has completed and is paused then call the 
             // playstate change handler method to carry out its logic
             if (sender.PlaybackSession.PlaybackState == MediaPlaybackState.Paused &&
-                sender.PlaybackSession.Position == sender.PlaybackSession.NaturalDuration)
+                sender.PlaybackSession.Position == sender.PlaybackSession.NaturalDuration &&
+                // this is also a hack
+                sender.PlaybackSession.NaturalDuration != new TimeSpan(0))
             {
                 // this is a hack as the event gets triggered twice for some reason for the same track.
                 sender.PlaybackSession.Position = new TimeSpan(0); 

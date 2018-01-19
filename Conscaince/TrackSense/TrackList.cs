@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.Data.Json;
-using Windows.Media.Core;
-using Windows.Media.Playback;
 
 namespace Conscaince.TrackSense
 {
