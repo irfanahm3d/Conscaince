@@ -130,10 +130,12 @@ namespace Conscaince
                     if (String.IsNullOrEmpty(this.userInput))
                     {
                         // i did not quite hear that
+                        //audioService.Play("ai:Not_Understand", false);
                     }
                     else if (String.Equals(this.userInput, "maybe", StringComparison.OrdinalIgnoreCase))
                     {
                         // this is an unacceptable response
+                        //audioService.Play("ai:Unacceptable", false);
                     }
                     else
                     {

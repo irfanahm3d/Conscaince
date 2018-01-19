@@ -7,7 +7,7 @@
       },
       {
         "title": "ai:Feeling",
-        "text": "How are you feeling today?"
+        "text": "How are you? Aren't you feeling great today?!"
       },
       {
         "title": "ai:Reassure",
@@ -19,7 +19,7 @@
       },
       {
         "title": "ai:News",
-        "text": "Would you be interested in hearing today's news?"
+        "text": "How about hearing today's news?"
       },
       {
         "title": "ai:Snippets",
@@ -27,7 +27,7 @@
       },
       {
         "title": "ai:Song?",
-        "text": "Alright. That's fine. How about your favorite music?"
+        "text": "Alright. That's fine. Wpuld you prefer your favorite music instead?"
       },
       {
         "title": "ai:Showered_Enough?",
@@ -80,6 +80,14 @@
       {
         "title": "ai:Finally",
         "text": "Finally! Talked some sense into you! Now let's grab that bus before we miss it!"
+      },
+      {
+        "title": "ai:Not_Understand",
+        "text": "I'm sorry! I didn't quite get that. Could you repeat that again?"
+      },
+      {
+        "title": "ai:Unacceptable",
+        "text": "That is not an acceptable response. It is best being definitive in your decisions."
       }
     ]
   }

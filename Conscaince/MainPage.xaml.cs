@@ -32,7 +32,7 @@ namespace Conscaince
 
             coreHub.CurrentNodeChanged += OnCurrentNodeChanged;
             coreHub.CurrentNodeCompleted += OnCurrentNodeCompleted;
-            await coreHub.Initialize();            
+            coreHub.Initialize();            
         }
 
         async void OnCurrentNodeChanged(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace Conscaince
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
-                await coreHub.TraverseNodesAsync();
+                coreHub.TraverseNodesAsync();
             });
         }
 
