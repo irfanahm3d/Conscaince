@@ -10,7 +10,7 @@
             "type": "audio",
             "sourceId": "ai:Good_Morning",
             "isTraversing": false,
-            "relativeStartTime": "00:00:06",
+            "relativeStartTime": "00:00:05",
             "requisites": []
           },
           {
@@ -38,7 +38,7 @@
             "type": "audio",
             "sourceId": "Sheets_Rustle",
             "isTraversing": false,
-            "relativeStartTime": "00:00:08",
+            "relativeStartTime": "00:00:12",
             "requisites": []
           }
         ],
@@ -271,7 +271,7 @@
           {
             "type": "audio",
             "sourceId": "Brushing_Teeth",
-            "isTraversing": true,
+            "isTraversing": false,
             "relativeStartTime": "00:00:40",
             "requisites": []
           },
@@ -335,9 +335,9 @@
         "media": [
           {
             "type": "audio",
-            "sourceId": "Song",
+            "sourceId": "Droner_Song",
             "isTraversing": false,
-            "relativeStartTime": "",
+            "relativeStartTime": "00:00:04",
             "requisites": []
           },
           {
@@ -350,7 +350,7 @@
           {
             "type": "audio",
             "sourceId": "Brushing_Teeth",
-            "isTraversing": true,
+            "isTraversing": false,
             "relativeStartTime": "00:00:40",
             "requisites": []
           },
@@ -405,7 +405,7 @@
           {
             "type": "audio",
             "sourceId": "Brushing_Teeth",
-            "isTraversing": true,
+            "isTraversing": false,
             "relativeStartTime": "00:00:40",
             "requisites": []
           },
@@ -461,7 +461,7 @@
             "type": "audio",
             "sourceId": "Shower_On",
             "isTraversing": true,
-            "relativeStartTime": "00:00:07",
+            "relativeStartTime": "00:00:06",
             "requisites": []
           },
           {
@@ -561,7 +561,7 @@
             "type": "audio",
             "sourceId": "ai:Great",
             "isTraversing": false,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:08",
             "requisites": []
           },
           {
@@ -630,11 +630,52 @@
         "actions": [
           {
             "choice": "yes",
-            "nextNodeId": [ "16" ]
+            "nextNodeId": [ "14" ]
           },
           {
             "choice": "no",
             "nextNodeId": [ "15" ]
+          }
+        ]
+      },
+      {
+        "id": "14",
+        "title": "Dry",
+        "metaDescription": "Derek has to dry off.",
+        "media": [
+          {
+            "type": "audio",
+            "sourceId": "Shower_Off",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Floor_Walk",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:37",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Drying",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:18",
+            "requisites": []
+          }
+        ],
+        "actions": [
+          {
+            "choice": "n.a",
+            "nextNodeId": [ "16" ]
           }
         ]
       },
@@ -682,14 +723,14 @@
             "type": "audio",
             "sourceId": "Floor_Walk",
             "isTraversing": false,
-            "relativeStartTime": "00:00:37",
+            "relativeStartTime": "00:00:36",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Drying",
             "isTraversing": false,
-            "relativeStartTime": "00:00:18",
+            "relativeStartTime": "00:00:16",
             "requisites": []
           }
         ],
@@ -789,7 +830,7 @@
             "type": "audio",
             "sourceId": "ai:Drive?",
             "isTraversing": false,
-            "relativeStartTime": "00:00:10",
+            "relativeStartTime": "00:00:09",
             "requisites": []
           },
           {
@@ -803,7 +844,7 @@
             "type": "audio",
             "sourceId": "Car_Keys",
             "isTraversing": false,
-            "relativeStartTime": "00:00:06",
+            "relativeStartTime": "00:00:07",
             "requisites": []
           },
           {
@@ -841,7 +882,7 @@
             "type": "audio",
             "sourceId": "ai:Blame",
             "isTraversing": false,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:03",
             "requisites": []
           },
           {
@@ -889,7 +930,7 @@
             "type": "audio",
             "sourceId": "ai:Carbon?",
             "isTraversing": false,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:03",
             "requisites": []
           },
           {
@@ -941,7 +982,7 @@
             "type": "audio",
             "sourceId": "ai:Bus_Umbrella",
             "isTraversing": false,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:03",
             "requisites": []
           },
           {
@@ -969,7 +1010,7 @@
             "type": "audio",
             "sourceId": "Running",
             "isTraversing": false,
-            "relativeStartTime": "00:00:17",
+            "relativeStartTime": "00:00:16",
             "requisites": []
           },
           {
@@ -1019,7 +1060,14 @@
             "type": "audio",
             "sourceId": "ai:Car",
             "isTraversing": false,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:08",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "ai:Not_Happy",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:39",
             "requisites": []
           },
           {
@@ -1061,14 +1109,14 @@
             "type": "audio",
             "sourceId": "Car_Running",
             "isTraversing": false,
-            "relativeStartTime": "00:00:24",
+            "relativeStartTime": "00:00:20",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Car_Reverse",
             "isTraversing": false,
-            "relativeStartTime": "00:00:30",
+            "relativeStartTime": "00:00:24",
             "requisites": []
           },
           {
@@ -1088,8 +1136,8 @@
           {
             "type": "audio",
             "sourceId": "Car_Drive",
-            "isTraversing": true,
-            "relativeStartTime": "00:00:40",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:34",
             "requisites": []
           }
         ],
@@ -1104,7 +1152,7 @@
             "type": "audio",
             "sourceId": "ai:Finally",
             "isTraversing": false,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:08",
             "requisites": []
           },
           {
@@ -1132,7 +1180,7 @@
             "type": "audio",
             "sourceId": "Running",
             "isTraversing": false,
-            "relativeStartTime": "00:00:10",
+            "relativeStartTime": "00:00:11",
             "requisites": []
           },
           {
@@ -1153,7 +1201,7 @@
             "type": "audio",
             "sourceId": "Bus_Ambience",
             "isTraversing": false,
-            "relativeStartTime": "00:00:25",
+            "relativeStartTime": "00:00:27",
             "requisites": []
           }
         ],

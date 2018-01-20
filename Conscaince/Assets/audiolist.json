@@ -139,7 +139,7 @@
         "mediaUri": "ms-appx:///Assets/hangars.mp3",
         "autoplay": false,
         "loop": false,
-        "volume": 0.6
+        "volume": 0.7
       },
       {
         "title": "Car_Keys",
@@ -217,6 +217,13 @@
         "autoplay": false,
         "loop": false,
         "volume": 0.4
+      },
+      {
+        "title": "Droner_Song",
+        "mediaUri": "ms-appx:///Assets/droner_song.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.3
       }
     ]
   }

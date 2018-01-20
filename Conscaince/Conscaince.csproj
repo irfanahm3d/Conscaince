@@ -132,6 +132,7 @@
     <Content Include="Assets\car_running.mp3" />
     <Content Include="Assets\car_start.mp3" />
     <Content Include="Assets\door.mp3" />
+    <Content Include="Assets\droner_song.mp3" />
     <Content Include="Assets\face_rub.mp3" />
     <Content Include="Assets\footsteps_tile.mp3" />
     <Content Include="Assets\hangars.mp3" />
