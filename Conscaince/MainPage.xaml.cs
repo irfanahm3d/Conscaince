@@ -39,7 +39,7 @@ namespace Conscaince
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
-                debugTitle.Text = sender.ToString();
+                //debugTitle.Text = sender.ToString();
             });
         }
 
@@ -78,6 +78,7 @@ namespace Conscaince
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
                 coreHub.TraverseNodesAsync();
+                beginButton.IsEnabled = false;
             });
         }
 

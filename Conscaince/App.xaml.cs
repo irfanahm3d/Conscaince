@@ -64,6 +64,9 @@ namespace Conscaince
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
 
+                // set app to full screen
+                ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
+
                 // Changes the app title bar and button colors 
                 ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
                 titleBar.BackgroundColor = Colors.LightGray;

@@ -10,9 +10,11 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <RelativePanel VerticalAlignment="Center" HorizontalAlignment="Stretch" >
             <TextBlock x:Name="debugTitle" Text="" FontSize="30" FontFamily="Noto Nastaliq Urdu" Padding="40" Foreground="LightGray" RelativePanel.AlignHorizontalCenterWithPanel="True" HorizontalAlignment="Center"/>
-            <Button x:Name="beginButton" Content="Begin" Click="BeginButton_Click" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="debugTitle" HorizontalAlignment="Center" Background="LightGray" />
-            <Button x:Name="yesButton" Content="Yes" Click="YesButton_Click" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="beginButton" HorizontalAlignment="Center" Background="LightGray" />
-            <Button x:Name="noButton" Content="No" Click="NoButton_Click" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="beginButton" RelativePanel.RightOf="yesButton" HorizontalAlignment="Center" Background="LightGray" />
+            <Button x:Name="beginButton" Content="Begin" FontSize="30" Padding="10" Click="BeginButton_Click" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="debugTitle" HorizontalAlignment="Center" Background="LightGray" />
+        </RelativePanel>
+        <RelativePanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="yesButton" Content="Yes" FontSize="20" Margin="10" Padding="10" Click="YesButton_Click" HorizontalAlignment="Center" Background="LightGray" />
+            <Button x:Name="noButton" Content="No" FontSize="20" Margin="10" Padding="10" Click="NoButton_Click" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="yesButton" HorizontalAlignment="Center" Background="LightGray" />
         </RelativePanel>
     </Grid>
 </Page>
