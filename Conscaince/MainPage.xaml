@@ -8,8 +8,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <RelativePanel VerticalAlignment="Center" HorizontalAlignment="Stretch" >
-            <TextBlock x:Name="debugTitle" Text="" FontSize="30" FontFamily="Noto Nastaliq Urdu" Padding="40" Foreground="LightGray" RelativePanel.AlignHorizontalCenterWithPanel="True" HorizontalAlignment="Center"/>
+        <RelativePanel VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="-4,226,4,0" >
+            <TextBlock x:Name="debugTitle" Text="" FontSize="15" FontFamily="Noto Nastaliq Urdu" Padding="20" Foreground="LightGray" RelativePanel.AlignHorizontalCenterWithPanel="True" HorizontalAlignment="Center"/>
             <Button x:Name="beginButton" Content="Begin" FontSize="30" Padding="10" Click="BeginButton_Click" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="debugTitle" HorizontalAlignment="Center" Background="LightGray" />
         </RelativePanel>
         <RelativePanel VerticalAlignment="Center" HorizontalAlignment="Center">

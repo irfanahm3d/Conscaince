@@ -47,7 +47,7 @@
       },
       {
         "title": "ai:Great",
-        "text": "Very good Derek! Did you know, a 5 minute shower uses 100 litres of water, but with a reduced-flow showerhead less than half is used. Good thing we have the reduced-flow!"
+        "text": "Very good Derek! Did you know, a 5 minute shower uses 100 litres of water, but with a reduced-flow shower head less than half is used. Good thing we have the reduced-flow!"
       },
       {
         "title": "ai:Alright",
@@ -96,6 +96,10 @@
       {
         "title": "ai:Finally",
         "text": "Finally! Talked some sense into you! Now let's grab that bus before we miss it! Oh, you forgot your umbrella. Nevermind! Keep going now. You're late. A little rain won't do you any harm."
+      },
+      {
+        "title": "ai:Phew",
+        "text": "Wow! That was a close call. Good running! It's going to be a great day today!."
       },
       {
         "title": "ai:Not_Understand",

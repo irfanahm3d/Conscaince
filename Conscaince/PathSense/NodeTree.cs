@@ -117,15 +117,17 @@ namespace Conscaince.PathSense
             {
                 isNext = false;
             }
-
-            Node nextNode = null;
-            if (!this.nodes.TryGetValue(action.NextNodeId[0], out nextNode))
+            else
             {
-                throw new Exception("this was not meant to happen");
-            }
+                Node nextNode = null;
+                if (!this.nodes.TryGetValue(action.NextNodeId[0], out nextNode))
+                {
+                    throw new Exception("this was not meant to happen");
+                }
 
-            this.CurrentNode = nextNode;
-            OnCurrentNodeChanged(new EventArgs());
+                this.CurrentNode = nextNode;
+                OnCurrentNodeChanged(new EventArgs());
+            }
 
             return isNext;
         }
