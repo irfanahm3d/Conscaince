@@ -58,7 +58,7 @@
             "type": "audio",
             "sourceId": "ai:Feeling",
             "isTraversing": false,
-            "relativeStartTime": "00:00:02",
+            "relativeStartTime": "",
             "requisites": []
           },
           {
@@ -79,7 +79,7 @@
             "type": "audio",
             "sourceId": "Face_Rub",
             "isTraversing": false,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:03",
             "requisites": []
           },
           {
@@ -93,7 +93,7 @@
             "type": "audio",
             "sourceId": "Out_of_Bed",
             "isTraversing": false,
-            "relativeStartTime": "00:00:08",
+            "relativeStartTime": "00:00:05",
             "requisites": []
           }
         ],
@@ -277,13 +277,6 @@
           },
           {
             "type": "audio",
-            "sourceId": "Floor_Walk",
-            "isTraversing": false,
-            "relativeStartTime": "00:00:20",
-            "requisites": []
-          },
-          {
-            "type": "audio",
             "sourceId": "Toilet_Use",
             "isTraversing": false,
             "relativeStartTime": "00:00:18",
@@ -443,6 +436,13 @@
             "isTraversing": false,
             "relativeStartTime": "00:00:03",
             "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "ai:Last_Night",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:07",
+            "requisites": []
           }
         ],
         "actions": [
@@ -461,7 +461,7 @@
             "type": "audio",
             "sourceId": "Shower_On",
             "isTraversing": true,
-            "relativeStartTime": "00:00:07",
+            "relativeStartTime": "00:00:04",
             "requisites": []
           },
           {
@@ -469,6 +469,20 @@
             "sourceId": "Shower_Running",
             "isTraversing": true,
             "relativeStartTime": "00:00:09",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "ai:Shower_1",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:19",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "ai:Shower_2",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:35",
             "requisites": []
           },
           {
