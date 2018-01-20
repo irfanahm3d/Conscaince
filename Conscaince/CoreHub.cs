@@ -83,15 +83,10 @@ namespace Conscaince
         {
             this.userInput = string.Empty;
         }
-                
-        public async Task BufferMedia(int depth)
+
+        public async Task DisposeMedia()
         {
-
-        }
-
-        public async Task DisposeUnusedMedia()
-        {
-
+            this.audioService.Dispose();
         }
 
         public async Task<string> GetSourceId()
@@ -125,17 +120,17 @@ namespace Conscaince
             {
                 while (true)
                 {
-                    //userInput = await input.RecordSpeechFromMicrophoneAsync();
+                    userInput = await input.RecordSpeechFromMicrophoneAsync();
 
                     if (String.IsNullOrEmpty(this.userInput))
                     {
                         // i did not quite hear that
-                        //audioService.Play("ai:Not_Understand", false);
+                        PlayTrack("ai:Not_Understand", false);
                     }
                     else if (String.Equals(this.userInput, "maybe", StringComparison.OrdinalIgnoreCase))
                     {
                         // this is an unacceptable response
-                        //audioService.Play("ai:Unacceptable", false);
+                        PlayTrack("ai:Unacceptable", false);
                     }
                     else
                     {
@@ -161,6 +156,8 @@ namespace Conscaince
                 
                 PauseTracks(mediaList);
             } while (isNext);
+
+            DisposeMedia();
         }
 
         async Task PlayTracks(IList<AMedium> mediaList)

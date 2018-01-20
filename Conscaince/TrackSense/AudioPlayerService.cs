@@ -150,7 +150,11 @@ namespace Conscaince.TrackSense
                     Volume = 0.0d
                 };
 
-                synthTrack.CurrentStateChanged += AudioTrackPlayStateChange;
+                if (!(String.Equals(track.Title, "ai:Unacceptable", StringComparison.OrdinalIgnoreCase) ||
+                    String.Equals(track.Title, "ai:Not_Understand", StringComparison.OrdinalIgnoreCase)))
+                {
+                    synthTrack.CurrentStateChanged += AudioTrackPlayStateChange;
+                }
                 this.SoundTracks.Add(
                     track.Title,
                     new MediaTrack(
