@@ -161,49 +161,50 @@ namespace Conscaince
                 
                 PauseTracks(mediaList);
             } while (isNext);
-
         }
 
         async Task PlayTracks(IList<AMedium> mediaList)
         {
-            IEnumerable<AMedium> zeroTimeMedia = 
+            IEnumerable<AMedium> zeroTimeMedia =
                 mediaList.Where(m => m.RelativeStartTime == new TimeSpan(0, 0, 0));
-
-            // immediately plays media that is to be started at 0th time, i.e.
-            // the time relative to the processing of the node media.
-            foreach (var media in zeroTimeMedia)
+            Task.Run(async () =>
             {
-                PlayTrack(media.SourceId, media.IsTraversing);
-            };
+                // immediately plays media that is to be started at 0th time, i.e.
+                // the time relative to the processing of the node media.
+                Parallel.ForEach<AMedium>(zeroTimeMedia, media => { PlayTrack(media.SourceId, media.IsTraversing); });
+            });
 
-            // for media that is to be played after 0th time put them in ascending order
-            // and play them according to the time marked.
-            IList<AMedium> ascendingTimeMedia = 
-                mediaList.Except(zeroTimeMedia).OrderBy(m => m.RelativeStartTime).ToList();
-            
-            Stopwatch watch = new Stopwatch();
-            watch.Start();
-            while (ascendingTimeMedia.Count() != 0)
+            Task.Run(async () =>
             {
-                AMedium relativeMedia = ascendingTimeMedia.First();
-                if (watch.Elapsed >= relativeMedia.RelativeStartTime)
+                // for media that is to be played after 0th time put them in ascending order
+                // and play them according to the time marked.
+                IList<AMedium> ascendingTimeMedia =
+                    mediaList.Except(zeroTimeMedia).OrderBy(m => m.RelativeStartTime).ToList();
+
+                Stopwatch watch = new Stopwatch();
+                watch.Start();
+                while (ascendingTimeMedia.Count() != 0)
                 {
-                    PlayTrack(relativeMedia.SourceId, relativeMedia.IsTraversing);
-                    ascendingTimeMedia.RemoveAt(0);
+                    AMedium relativeMedia = ascendingTimeMedia.First();
+                    if (watch.Elapsed >= relativeMedia.RelativeStartTime)
+                    {
+                        PlayTrack(relativeMedia.SourceId, relativeMedia.IsTraversing);
+                        ascendingTimeMedia.RemoveAt(0);
+                    }
                 }
-            }
-            watch.Stop();
+                watch.Stop();
+            });
         }
 
         async Task PauseTracks(IList<AMedium> mediaList)
         {
-            // determine media which is no longer relevant and remove them.
-            IEnumerable<AMedium> newMediaList = await this.nodeTree.CurrentNode.GetMedia();
-            IEnumerable<AMedium> mediaToPause = mediaList.Except(newMediaList, new MediumComparer());
-            foreach (var media in mediaToPause)
+            Task.Run(async () =>
             {
-                PauseTrack(media.SourceId);
-            };
+                // determine media which is no longer relevant and remove them.
+                IEnumerable<AMedium> newMediaList = await this.nodeTree.CurrentNode.GetMedia();
+                IEnumerable<AMedium> mediaToPause = mediaList.Except(newMediaList, new MediumComparer());
+                Parallel.ForEach<AMedium>(mediaToPause, media => { PauseTrack(media.SourceId); });
+            });
         }
 
         async Task PlayTrack(string mediaId, bool loop)

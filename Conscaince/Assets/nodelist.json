@@ -10,7 +10,7 @@
             "type": "audio",
             "sourceId": "ai:Good_Morning",
             "isTraversing": false,
-            "relativeStartTime": "00:00:02",
+            "relativeStartTime": "00:00:04",
             "requisites": []
           },
           {
@@ -38,7 +38,7 @@
             "type": "audio",
             "sourceId": "Sheets_Rustle",
             "isTraversing": false,
-            "relativeStartTime": "00:00:12",
+            "relativeStartTime": "00:00:08",
             "requisites": []
           }
         ],
@@ -58,7 +58,7 @@
             "type": "audio",
             "sourceId": "ai:Feeling",
             "isTraversing": false,
-            "relativeStartTime": "00:00:01",
+            "relativeStartTime": "00:00:02",
             "requisites": []
           },
           {
@@ -79,7 +79,7 @@
             "type": "audio",
             "sourceId": "Face_Rub",
             "isTraversing": false,
-            "relativeStartTime": "00:00:07",
+            "relativeStartTime": "00:00:05",
             "requisites": []
           },
           {
@@ -93,7 +93,7 @@
             "type": "audio",
             "sourceId": "Out_of_Bed",
             "isTraversing": false,
-            "relativeStartTime": "00:00:12",
+            "relativeStartTime": "00:00:08",
             "requisites": []
           }
         ],
@@ -117,7 +117,7 @@
             "type": "audio",
             "sourceId": "ai:Reassure",
             "isTraversing": false,
-            "relativeStartTime": "00:00:02",
+            "relativeStartTime": "",
             "requisites": []
           },
           {
@@ -144,7 +144,7 @@
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
-            "isTraversing": false,
+            "isTraversing": true,
             "relativeStartTime": "00:00:05",
             "requisites": []
           }
@@ -192,7 +192,7 @@
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
-            "isTraversing": false,
+            "isTraversing": true,
             "relativeStartTime": "00:00:08",
             "requisites": []
           }
@@ -219,7 +219,7 @@
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
-            "isTraversing": false,
+            "isTraversing": true,
             "relativeStartTime": "",
             "requisites": []
           }
@@ -244,7 +244,7 @@
             "type": "audio",
             "sourceId": "ai:Snippets",
             "isTraversing": false,
-            "relativeStartTime": "00:00:01",
+            "relativeStartTime": "",
             "requisites": []
           },
           {
@@ -258,14 +258,14 @@
             "type": "audio",
             "sourceId": "Brushing_Teeth",
             "isTraversing": false,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:03",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
             "isTraversing": false,
-            "relativeStartTime": "00:00:19",
+            "relativeStartTime": "",
             "requisites": []
           },
           {

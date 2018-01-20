@@ -86,6 +86,23 @@ namespace Conscaince.PathSense
             }
         }
 
+        public async Task<IList<Node>> SeekNext()
+        {
+            IList<Node> nextNodes = new List<Node>();
+            foreach (var action in this.CurrentNode.Actions)
+            {
+                // can take the 0th index since currently one action points only
+                // to one node. THIS IS A HACK. Will need to change
+                Node node;
+                if (this.nodes.TryGetValue(action.NextNodeId[0], out node))
+                {
+                    nextNodes.Add(node);
+                }
+            }
+
+            return nextNodes;
+        }
+
         public async Task<bool> MoveNext(string actionChoice)
         {
             bool isNext = true;
