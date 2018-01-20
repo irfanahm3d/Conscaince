@@ -27,7 +27,7 @@
       },
       {
         "title": "ai:Song?",
-        "text": "Alright. That's fine. Wpuld you prefer your favorite music instead?"
+        "text": "Alright. That's fine. Would you prefer your favorite music instead?"
       },
       {
         "title": "ai:Showered_Enough?",
@@ -39,7 +39,7 @@
       },
       {
         "title": "ai:Alright",
-        "text": "That's alright. But did you know 2.5 billion people around the world don't have access to improved sanitation? I'm glad we can enjoy a shower with clean, fresh water."
+        "text": "That's alright. But did you know 2.5 billion people around the world don't have access to improved sanitation? I'm glad we can enjoy a shower with clean, fresh water. But maybe you should stop now?"
       },
       {
         "title": "ai:Seriously!",

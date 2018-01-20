@@ -145,6 +145,7 @@
     <Content Include="Assets\rain_interior.mp3" />
     <Content Include="Assets\running_puddles.mp3" />
     <Content Include="Assets\sheets_rustling.mp3" />
+    <Content Include="Assets\shower_dur.mp3" />
     <Content Include="Assets\shower_off.mp3" />
     <Content Include="Assets\shower_on.mp3" />
     <Content Include="Assets\shower_running.mp3" />
@@ -154,6 +155,7 @@
     <Content Include="Assets\traffic_outside.mp3" />
     <Content Include="Assets\umbrella_open.mp3" />
     <Content Include="Assets\umbrella_rain.mp3" />
+    <Content Include="Assets\urinating.mp3" />
     <Content Include="Assets\wear_jacket.mp3" />
     <Content Include="Assets\wear_pants.mp3" />
     <Content Include="Properties\Default.rd.xml" />

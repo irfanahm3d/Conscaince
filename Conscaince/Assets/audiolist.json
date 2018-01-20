@@ -27,7 +27,7 @@
         "mediaUri": "ms-appx:///Assets/breathing_calm.mp3",
         "autoplay": false,
         "loop": false,
-        "volume": 0.5
+        "volume": 0.3
       },
       {
         "title": "Face_Rub",
@@ -79,6 +79,13 @@
         "volume": 0.3
       },
       {
+        "title": "Urinate",
+        "mediaUri": "ms-appx:///Assets/urinating.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.4
+      },
+      {
         "title": "Shower_On",
         "mediaUri": "ms-appx:///Assets/shower_on.mp3",
         "autoplay": false,
@@ -88,6 +95,13 @@
       {
         "title": "Shower_Running",
         "mediaUri": "ms-appx:///Assets/shower_running.mp3",
+        "autoplay": false,
+        "loop": false,
+        "volume": 0.3
+      },
+      {
+        "title": "Shower_Duration",
+        "mediaUri": "ms-appx:///Assets/shower_dur.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.3

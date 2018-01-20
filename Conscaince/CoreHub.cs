@@ -120,17 +120,17 @@ namespace Conscaince
             {
                 while (true)
                 {
-                    userInput = await input.RecordSpeechFromMicrophoneAsync();
+                    //userInput = await input.RecordSpeechFromMicrophoneAsync();
 
                     if (String.IsNullOrEmpty(this.userInput))
                     {
                         // i did not quite hear that
-                        PlayTrack("ai:Not_Understand", false);
+                        //PlayTrack("ai:Not_Understand", false);
                     }
                     else if (String.Equals(this.userInput, "maybe", StringComparison.OrdinalIgnoreCase))
                     {
                         // this is an unacceptable response
-                        PlayTrack("ai:Unacceptable", false);
+                        //PlayTrack("ai:Unacceptable", false);
                     }
                     else
                     {

@@ -222,6 +222,13 @@
             "isTraversing": true,
             "relativeStartTime": "",
             "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
           }
         ],
         "actions": [
@@ -249,30 +256,44 @@
           },
           {
             "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
             "sourceId": "Tap_Water",
             "isTraversing": false,
-            "relativeStartTime": "00:00:12",
+            "relativeStartTime": "00:00:24",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Brushing_Teeth",
-            "isTraversing": false,
-            "relativeStartTime": "00:00:03",
+            "isTraversing": true,
+            "relativeStartTime": "00:00:40",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
             "isTraversing": false,
-            "relativeStartTime": "",
+            "relativeStartTime": "00:00:20",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Toilet_Use",
             "isTraversing": false,
-            "relativeStartTime": "00:00:22",
+            "relativeStartTime": "00:00:18",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Urinate",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:03",
             "requisites": []
           }
         ],
@@ -292,6 +313,13 @@
             "type": "audio",
             "sourceId": "ai:Song?",
             "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
             "relativeStartTime": "",
             "requisites": []
           }
@@ -323,28 +351,42 @@
             "type": "audio",
             "sourceId": "Tap_Water",
             "isTraversing": false,
-            "relativeStartTime": "00:00:12",
+            "relativeStartTime": "00:00:25",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Brushing_Teeth",
             "isTraversing": true,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:40",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
             "isTraversing": false,
-            "relativeStartTime": "00:00:19",
+            "relativeStartTime": "00:00:20",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Toilet_Use",
             "isTraversing": false,
-            "relativeStartTime": "00:00:22",
+            "relativeStartTime": "00:00:18",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Urinate",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:03",
             "requisites": []
           }
         ],
@@ -364,28 +406,42 @@
             "type": "audio",
             "sourceId": "Tap_Water",
             "isTraversing": false,
-            "relativeStartTime": "00:00:12",
+            "relativeStartTime": "00:00:27",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Brushing_Teeth",
             "isTraversing": true,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:40",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Floor_Walk",
             "isTraversing": false,
-            "relativeStartTime": "00:00:19",
+            "relativeStartTime": "00:00:20",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Toilet_Use",
             "isTraversing": false,
-            "relativeStartTime": "00:00:22",
+            "relativeStartTime": "00:00:18",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Urinate",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:03",
             "requisites": []
           }
         ],
@@ -405,7 +461,7 @@
             "type": "audio",
             "sourceId": "Shower_On",
             "isTraversing": true,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:07",
             "requisites": []
           },
           {
@@ -417,8 +473,22 @@
           },
           {
             "type": "audio",
+            "sourceId": "Shower_Duration",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:12",
+            "requisites": []
+          },
+          {
+            "type": "audio",
             "sourceId": "Floor_Walk",
             "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
             "relativeStartTime": "",
             "requisites": []
           }
@@ -445,6 +515,13 @@
           {
             "type": "audio",
             "sourceId": "Shower_Running",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
             "isTraversing": true,
             "relativeStartTime": "",
             "requisites": []
@@ -477,6 +554,13 @@
             "type": "audio",
             "sourceId": "Shower_Off",
             "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
             "relativeStartTime": "",
             "requisites": []
           },
@@ -520,6 +604,13 @@
             "isTraversing": true,
             "relativeStartTime": "",
             "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
           }
         ],
         "actions": [
@@ -540,27 +631,6 @@
         "media": [
           {
             "type": "audio",
-            "sourceId": "ai:Seriously!",
-            "isTraversing": false,
-            "relativeStartTime": "",
-            "requisites": []
-          },
-          {
-            "type": "audio",
-            "sourceId": "ai:WHO",
-            "isTraversing": false,
-            "relativeStartTime": "00:00:06",
-            "requisites": []
-          },
-          {
-            "type": "audio",
-            "sourceId": "ai:Benjamin",
-            "isTraversing": false,
-            "relativeStartTime": "00:00:15",
-            "requisites": []
-          },
-          {
-            "type": "audio",
             "sourceId": "Shower_Off",
             "isTraversing": false,
             "relativeStartTime": "",
@@ -568,16 +638,44 @@
           },
           {
             "type": "audio",
+            "sourceId": "ai:Seriously!",
+            "isTraversing": false,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "ai:WHO",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:09",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "ai:Benjamin",
+            "isTraversing": false,
+            "relativeStartTime": "00:00:19",
+            "requisites": []
+          },
+          {
+            "type": "audio",
             "sourceId": "Floor_Walk",
             "isTraversing": false,
-            "relativeStartTime": "00:00:23",
+            "relativeStartTime": "00:00:37",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Drying",
             "isTraversing": false,
-            "relativeStartTime": "00:00:15",
+            "relativeStartTime": "00:00:18",
             "requisites": []
           }
         ],
@@ -597,7 +695,14 @@
             "type": "audio",
             "sourceId": "ai:Dashing",
             "isTraversing": false,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:27",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
             "requisites": []
           },
           {
@@ -632,21 +737,21 @@
             "type": "audio",
             "sourceId": "Brushing_Hair",
             "isTraversing": true,
-            "relativeStartTime": "00:00:35",
+            "relativeStartTime": "00:00:28",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Traffic",
             "isTraversing": true,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Rain",
             "isTraversing": true,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "",
             "requisites": []
           }
         ],
@@ -670,14 +775,21 @@
             "type": "audio",
             "sourceId": "ai:Drive?",
             "isTraversing": false,
-            "relativeStartTime": "00:00:03",
+            "relativeStartTime": "00:00:08",
             "requisites": []
-          },  
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          },
           {
             "type": "audio",
             "sourceId": "Car_Keys",
             "isTraversing": false,
-            "relativeStartTime": "",
+            "relativeStartTime": "00:00:03",
             "requisites": []
           },
           {
@@ -720,9 +832,16 @@
           },
           {
             "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
             "sourceId": "Brushing_Hair",
             "isTraversing": true,
-            "relativeStartTime": "00:00:03",
+            "relativeStartTime": "",
             "requisites": []
           },
           {
@@ -757,6 +876,13 @@
             "sourceId": "ai:Carbon?",
             "isTraversing": false,
             "relativeStartTime": "00:00:05",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
             "requisites": []
           },
           {
@@ -806,6 +932,13 @@
           },
           {
             "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
             "sourceId": "Floor_Walk",
             "isTraversing": false,
             "relativeStartTime": "",
@@ -843,7 +976,7 @@
             "type": "audio",
             "sourceId": "Bus_Ambience",
             "isTraversing": false,
-            "relativeStartTime": "00:00:30",
+            "relativeStartTime": "00:00:33",
             "requisites": []
           },
           {
@@ -857,7 +990,7 @@
             "type": "audio",
             "sourceId": "Umbrella_Rain",
             "isTraversing": false,
-            "relativeStartTime": "00:00:32",
+            "relativeStartTime": "00:00:17",
             "requisites": []
           }
         ],
@@ -872,7 +1005,14 @@
             "type": "audio",
             "sourceId": "ai:Car",
             "isTraversing": false,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:02",
+            "requisites": []
+          },
+          {
+            "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
             "requisites": []
           },
           {
@@ -886,56 +1026,56 @@
             "type": "audio",
             "sourceId": "Door",
             "isTraversing": false,
-            "relativeStartTime": "00:00:12",
+            "relativeStartTime": "00:00:06",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Car_Door",
             "isTraversing": false,
-            "relativeStartTime": "00:00:35",
+            "relativeStartTime": "00:00:14",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Car_Start",
             "isTraversing": false,
-            "relativeStartTime": "00:00:40",
+            "relativeStartTime": "00:00:19",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Car_Running",
             "isTraversing": true,
-            "relativeStartTime": "00:00:44",
+            "relativeStartTime": "00:00:24",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Car_Reverse",
             "isTraversing": false,
-            "relativeStartTime": "00:00:50",
+            "relativeStartTime": "00:00:30",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Traffic",
             "isTraversing": true,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:02",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Rain",
             "isTraversing": true,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:02",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Car_Drive",
             "isTraversing": true,
-            "relativeStartTime": "00:01:00",
+            "relativeStartTime": "00:00:40",
             "requisites": []
           }
         ],
@@ -955,6 +1095,13 @@
           },
           {
             "type": "audio",
+            "sourceId": "Breathing",
+            "isTraversing": true,
+            "relativeStartTime": "",
+            "requisites": []
+          },
+          {
+            "type": "audio",
             "sourceId": "Floor_Walk",
             "isTraversing": false,
             "relativeStartTime": "",
@@ -964,14 +1111,14 @@
             "type": "audio",
             "sourceId": "Door",
             "isTraversing": false,
-            "relativeStartTime": "00:00:12",
+            "relativeStartTime": "00:00:06",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Running",
             "isTraversing": false,
-            "relativeStartTime": "00:00:40",
+            "relativeStartTime": "00:00:10",
             "requisites": []
           },
           {
@@ -992,7 +1139,7 @@
             "type": "audio",
             "sourceId": "Bus_Ambience",
             "isTraversing": false,
-            "relativeStartTime": "00:00:50",
+            "relativeStartTime": "00:00:25",
             "requisites": []
           }
         ],
