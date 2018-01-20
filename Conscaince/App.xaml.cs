@@ -7,6 +7,9 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System.Display;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,6 +25,8 @@ namespace Conscaince
     /// </summary>
     sealed partial class App : Application
     {
+        DisplayRequest Display;
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -30,6 +35,7 @@ namespace Conscaince
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            this.Display = new DisplayRequest();
         }
 
         /// <summary>
@@ -57,6 +63,13 @@ namespace Conscaince
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+
+                // Changes the app title bar and button colors 
+                ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
+                titleBar.BackgroundColor = Colors.LightGray;
+                titleBar.ForegroundColor = Colors.White;
+                titleBar.ButtonBackgroundColor = Colors.LightGray;
+                titleBar.ButtonForegroundColor = Colors.White;
             }
 
             if (e.PrelaunchActivated == false)
@@ -71,6 +84,9 @@ namespace Conscaince
                 // Ensure the current window is active
                 Window.Current.Activate();
             }
+
+            // Ensures the screen does not lock or suspend due to user inactivity
+            Display.RequestActive();
         }
 
         /// <summary>
