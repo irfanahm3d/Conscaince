@@ -830,7 +830,7 @@
             "type": "audio",
             "sourceId": "ai:Drive?",
             "isTraversing": false,
-            "relativeStartTime": "00:00:09",
+            "relativeStartTime": "00:00:07",
             "requisites": []
           },
           {
@@ -844,7 +844,7 @@
             "type": "audio",
             "sourceId": "Car_Keys",
             "isTraversing": false,
-            "relativeStartTime": "00:00:07",
+            "relativeStartTime": "00:00:05",
             "requisites": []
           },
           {
@@ -1060,7 +1060,7 @@
             "type": "audio",
             "sourceId": "ai:Car",
             "isTraversing": false,
-            "relativeStartTime": "00:00:08",
+            "relativeStartTime": "00:00:06",
             "requisites": []
           },
           {
@@ -1116,7 +1116,7 @@
             "type": "audio",
             "sourceId": "Car_Reverse",
             "isTraversing": false,
-            "relativeStartTime": "00:00:24",
+            "relativeStartTime": "00:00:22",
             "requisites": []
           },
           {
@@ -1137,7 +1137,7 @@
             "type": "audio",
             "sourceId": "Car_Drive",
             "isTraversing": false,
-            "relativeStartTime": "00:00:34",
+            "relativeStartTime": "00:00:31",
             "requisites": []
           }
         ],
