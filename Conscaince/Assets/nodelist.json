@@ -10,7 +10,7 @@
             "type": "audio",
             "sourceId": "ai:Good_Morning",
             "isTraversing": false,
-            "relativeStartTime": "00:00:04",
+            "relativeStartTime": "00:00:06",
             "requisites": []
           },
           {
@@ -461,27 +461,27 @@
             "type": "audio",
             "sourceId": "Shower_On",
             "isTraversing": true,
-            "relativeStartTime": "00:00:04",
+            "relativeStartTime": "00:00:07",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Shower_Running",
             "isTraversing": true,
-            "relativeStartTime": "00:00:09",
+            "relativeStartTime": "00:00:11",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "ai:Shower_1",
-            "isTraversing": true,
+            "isTraversing": false,
             "relativeStartTime": "00:00:19",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "ai:Shower_2",
-            "isTraversing": true,
+            "isTraversing": false,
             "relativeStartTime": "00:00:35",
             "requisites": []
           },
@@ -582,14 +582,14 @@
             "type": "audio",
             "sourceId": "Floor_Walk",
             "isTraversing": false,
-            "relativeStartTime": "00:00:12",
+            "relativeStartTime": "00:00:37",
             "requisites": []
           },
           {
             "type": "audio",
             "sourceId": "Drying",
             "isTraversing": false,
-            "relativeStartTime": "00:00:05",
+            "relativeStartTime": "00:00:18",
             "requisites": []
           }
         ],
@@ -709,7 +709,7 @@
             "type": "audio",
             "sourceId": "ai:Dashing",
             "isTraversing": false,
-            "relativeStartTime": "00:00:27",
+            "relativeStartTime": "00:00:29",
             "requisites": []
           },
           {
@@ -789,7 +789,7 @@
             "type": "audio",
             "sourceId": "ai:Drive?",
             "isTraversing": false,
-            "relativeStartTime": "00:00:08",
+            "relativeStartTime": "00:00:10",
             "requisites": []
           },
           {
@@ -803,7 +803,7 @@
             "type": "audio",
             "sourceId": "Car_Keys",
             "isTraversing": false,
-            "relativeStartTime": "00:00:03",
+            "relativeStartTime": "00:00:06",
             "requisites": []
           },
           {
@@ -968,7 +968,7 @@
           {
             "type": "audio",
             "sourceId": "Running",
-            "isTraversing": true,
+            "isTraversing": false,
             "relativeStartTime": "00:00:17",
             "requisites": []
           },
@@ -990,7 +990,7 @@
             "type": "audio",
             "sourceId": "Bus_Ambience",
             "isTraversing": false,
-            "relativeStartTime": "00:00:33",
+            "relativeStartTime": "00:00:37",
             "requisites": []
           },
           {
@@ -1004,7 +1004,7 @@
             "type": "audio",
             "sourceId": "Umbrella_Rain",
             "isTraversing": false,
-            "relativeStartTime": "00:00:17",
+            "relativeStartTime": "00:00:15",
             "requisites": []
           }
         ],
@@ -1019,7 +1019,7 @@
             "type": "audio",
             "sourceId": "ai:Car",
             "isTraversing": false,
-            "relativeStartTime": "00:00:02",
+            "relativeStartTime": "00:00:05",
             "requisites": []
           },
           {
@@ -1060,7 +1060,7 @@
           {
             "type": "audio",
             "sourceId": "Car_Running",
-            "isTraversing": true,
+            "isTraversing": false,
             "relativeStartTime": "00:00:24",
             "requisites": []
           },

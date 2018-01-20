@@ -55,7 +55,7 @@
         "mediaUri": "ms-appx:///Assets/tap_water.mp3",
         "autoplay": false,
         "loop": false,
-        "volume": 0.5
+        "volume": 0.4
       },
       {
         "title": "Brushing_Teeth",
@@ -76,14 +76,14 @@
         "mediaUri": "ms-appx:///Assets/toilet.mp3",
         "autoplay": false,
         "loop": false,
-        "volume": 0.3
+        "volume": 0.2
       },
       {
         "title": "Urinate",
         "mediaUri": "ms-appx:///Assets/urinating.mp3",
         "autoplay": false,
         "loop": false,
-        "volume": 0.4
+        "volume": 0.3
       },
       {
         "title": "Shower_On",
@@ -216,7 +216,7 @@
         "mediaUri": "ms-appx:///Assets/umbrella_rain.mp3",
         "autoplay": false,
         "loop": false,
-        "volume": 0.5
+        "volume": 0.4
       }
     ]
   }
