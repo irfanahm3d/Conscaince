@@ -7,6 +7,7 @@ using Conscaince.PathSense;
 using Conscaince.TrackSense;
 using System.Threading;
 using System.Diagnostics;
+using Windows.ApplicationModel.Core;
 
 namespace Conscaince
 {
@@ -158,6 +159,8 @@ namespace Conscaince
             } while (isNext);
 
             DisposeMedia();
+
+            CoreApplication.Exit();
         }
 
         async Task PlayTracks(IList<AMedium> mediaList)
