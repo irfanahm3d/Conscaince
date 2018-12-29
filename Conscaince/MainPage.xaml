@@ -16,5 +16,8 @@
             <Button x:Name="yesButton" Content="Yes" FontSize="20" Margin="10" Padding="10" Click="YesButton_Click" HorizontalAlignment="Center" Background="LightGray" />
             <Button x:Name="noButton" Content="No" FontSize="20" Margin="10" Padding="10" Click="NoButton_Click" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="yesButton" HorizontalAlignment="Center" Background="LightGray" />
         </RelativePanel>
+        <RelativePanel VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="0,0,0,100" >
+            <TextBlock x:Name="timerText" Text="" FontSize="15" FontFamily="Noto Nastaliq Urdu" Padding="20" Foreground="LightGray" RelativePanel.AlignHorizontalCenterWithPanel="True" HorizontalAlignment="Center"/>
+        </RelativePanel>
     </Grid>
 </Page>

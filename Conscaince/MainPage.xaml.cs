@@ -18,6 +18,8 @@ namespace Conscaince
         CoreHub coreHub = CoreHub.CoreHubInstance;
 
         UserInput input = UserInput.UserInputInstance;
+        DispatcherTimer timer;
+        Stopwatch stopwatch;
 
         public MainPage()
         {
@@ -32,6 +34,10 @@ namespace Conscaince
 
             coreHub.CurrentNodeChanged += OnCurrentNodeChanged;
             coreHub.CurrentNodeCompleted += OnCurrentNodeCompleted;
+            timer = new DispatcherTimer();
+            stopwatch = new Stopwatch();
+            timer.Tick += OnTick;
+            timer.Interval = new TimeSpan(0, 0, 1);
             coreHub.Initialize();            
         }
 
@@ -77,6 +83,8 @@ namespace Conscaince
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
+                timer.Start();
+                stopwatch.Start();
                 coreHub.TraverseNodesAsync();
                 beginButton.IsEnabled = false;
             });
@@ -86,6 +94,11 @@ namespace Conscaince
         {
             yesButton.IsEnabled = enable;
             noButton.IsEnabled = enable;
+        }
+
+        async void OnTick(object sender, object e)
+        {
+            timerText.Text = stopwatch.Elapsed.ToString("mm\\:ss");
         }
     }
 }

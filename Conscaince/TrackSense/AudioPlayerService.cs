@@ -71,8 +71,8 @@ namespace Conscaince.TrackSense
                         soundEffectTrack.Player.CurrentStateChanged += AudioTrackPlayStateChange;
                     }
 
-                    FadeMedia(FadeType.FadeIn, soundEffectTrack.Player, soundEffectTrack.BaseVolume);
                     soundEffectTrack.Player.Play();
+                    FadeMedia(FadeType.FadeIn, soundEffectTrack.Player, soundEffectTrack.BaseVolume);
                 }
 
                 result = true;

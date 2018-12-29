@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Conscaince.PathSense;
 using Conscaince.TrackSense;
-using System.Threading;
 using System.Diagnostics;
 using Windows.ApplicationModel.Core;
 
