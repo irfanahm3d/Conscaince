@@ -24,9 +24,9 @@ namespace Conscaince
             }
         }
 
-        const string audioListUri = "ms-appx:///Assets/audiolist.json";
-        const string aiSpeechListUri = "ms-appx:///Assets/conscainceSpeechList.json";
-        const string nodeListUri = "ms-appx:///Assets/nodelist.json";
+        const string audioListUri = "ms-appx:///Assets/config/audiolist.json";
+        const string aiSpeechListUri = "ms-appx:///Assets/config/conscainceSpeechList.json";
+        const string nodeListUri = "ms-appx:///Assets/config/nodelist.json";
 
         /// <summary>
         /// The audio player service instance.

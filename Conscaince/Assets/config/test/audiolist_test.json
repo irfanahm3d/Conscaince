@@ -3,42 +3,42 @@
     "base": [
       {
         "title": "Sheets_Rustle",
-        "mediaUri": "ms-appx:///Assets/sheets_rustling.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/sheets_rustling.mp3",
         "autoplay": false,
         "loop": true,
         "volume": 0.6
       },
       {
         "title": "Rain",
-        "mediaUri": "ms-appx:///Assets/rain_interior.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/rain_interior.mp3",
         "autoplay": false,
         "loop": true,
         "volume": 0.3
       },
       {
         "title": "Traffic",
-        "mediaUri": "ms-appx:///Assets/traffic_outside.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/traffic_outside.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.1
       },
       {
         "title": "Breathing",
-        "mediaUri": "ms-appx:///Assets/breathing_calm.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/breathing_calm.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.3
       },
       {
         "title": "Face_Rub",
-        "mediaUri": "ms-appx:///Assets/face_rub.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/face_rub.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.5
       },
       {
         "title": "Out_of_Bed",
-        "mediaUri": "ms-appx:///Assets/out_of_bed.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/out_of_bed.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.5

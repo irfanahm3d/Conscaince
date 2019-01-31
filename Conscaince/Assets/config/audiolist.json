@@ -3,224 +3,224 @@
     "base": [
       {
         "title": "Sheets_Rustle",
-        "mediaUri": "ms-appx:///Assets/sheets_rustling.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/sheets_rustling.mp3",
         "autoplay": false,
         "loop": true,
         "volume": 0.6
       },
       {
         "title": "Rain",
-        "mediaUri": "ms-appx:///Assets/rain_interior.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/rain_interior.mp3",
         "autoplay": false,
         "loop": true,
         "volume": 0.3
       },
       {
         "title": "Traffic",
-        "mediaUri": "ms-appx:///Assets/traffic_outside.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/traffic_outside.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.1
       },
       {
         "title": "Breathing",
-        "mediaUri": "ms-appx:///Assets/breathing_calm.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/breathing_calm.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.3
       },
       {
         "title": "Face_Rub",
-        "mediaUri": "ms-appx:///Assets/face_rub.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/face_rub.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.5
       },
       {
         "title": "Out_of_Bed",
-        "mediaUri": "ms-appx:///Assets/out_of_bed.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/out_of_bed.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.5
       },
       {
         "title": "Floor_Walk",
-        "mediaUri": "ms-appx:///Assets/footsteps_tile.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/footsteps_tile.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.5
       },
       {
         "title": "Tap_Water",
-        "mediaUri": "ms-appx:///Assets/tap_water.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/tap_water.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.4
       },
       {
         "title": "Brushing_Teeth",
-        "mediaUri": "ms-appx:///Assets/brushing_teeth.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/brushing_teeth.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.3
       },
       {
         "title": "Brushing_Hair",
-        "mediaUri": "ms-appx:///Assets/brush_hair.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/brush_hair.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.4
       },
       {
         "title": "Toilet_Use",
-        "mediaUri": "ms-appx:///Assets/toilet.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/toilet.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.2
       },
       {
         "title": "Urinate",
-        "mediaUri": "ms-appx:///Assets/urinating.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/urinating.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.3
       },
       {
         "title": "Shower_On",
-        "mediaUri": "ms-appx:///Assets/shower_on.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/shower_on.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.3
       },
       {
         "title": "Shower_Running",
-        "mediaUri": "ms-appx:///Assets/shower_running.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/shower_running.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.3
       },
       {
         "title": "Shower_Duration",
-        "mediaUri": "ms-appx:///Assets/shower_dur.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/shower_dur.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.3
       },
       {
         "title": "Shower_Off",
-        "mediaUri": "ms-appx:///Assets/shower_off.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/shower_off.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.3
       },
       {
         "title": "Drying",
-        "mediaUri": "ms-appx:///Assets/towel_dry.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/towel_dry.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.6
       },
       {
         "title": "Wear_Pants",
-        "mediaUri": "ms-appx:///Assets/wear_pants.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/wear_pants.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.6
       },
       {
         "title": "Wear_Jacket",
-        "mediaUri": "ms-appx:///Assets/wear_jacket.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/wear_jacket.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.6
       },
       {
         "title": "Hangars",
-        "mediaUri": "ms-appx:///Assets/hangars.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/hangars.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.7
       },
       {
         "title": "Car_Keys",
-        "mediaUri": "ms-appx:///Assets/car_keys.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/car_keys.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.6
       },
       {
         "title": "Car_Door",
-        "mediaUri": "ms-appx:///Assets/car_door.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/car_door.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.5
       },
       {
         "title": "Car_Start",
-        "mediaUri": "ms-appx:///Assets/car_start.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/car_start.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.6
       },
       {
         "title": "Car_Running",
-        "mediaUri": "ms-appx:///Assets/car_running.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/car_running.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.6
       },
       {
         "title": "Car_Drive",
-        "mediaUri": "ms-appx:///Assets/car_drive.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/car_drive.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.6
       },
       {
         "title": "Car_Reverse",
-        "mediaUri": "ms-appx:///Assets/car_reverse.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/car_reverse.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.6
       },
       {
         "title": "Door",
-        "mediaUri": "ms-appx:///Assets/door.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/door.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.5
       },
       {
         "title": "Running",
-        "mediaUri": "ms-appx:///Assets/running_puddles.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/running_puddles.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.5
       },
       {
         "title": "Bus_Ambience",
-        "mediaUri": "ms-appx:///Assets/bus_ambience.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/bus_ambience.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.5
       },
       {
         "title": "Umbrella_Open",
-        "mediaUri": "ms-appx:///Assets/umbrella_open.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/umbrella_open.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.5
       },
       {
         "title": "Umbrella_Rain",
-        "mediaUri": "ms-appx:///Assets/umbrella_rain.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/umbrella_rain.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.4
       },
       {
         "title": "Droner_Song",
-        "mediaUri": "ms-appx:///Assets/droner_song.mp3",
+        "mediaUri": "ms-appx:///Assets/audio/droner_song.mp3",
         "autoplay": false,
         "loop": false,
         "volume": 0.3

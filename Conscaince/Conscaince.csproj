@@ -120,47 +120,46 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="Assets\audiolist.json" />
-    <Content Include="Assets\breathing_calm.mp3" />
-    <Content Include="Assets\brushing_teeth.mp3" />
-    <Content Include="Assets\brush_hair.mp3" />
-    <Content Include="Assets\bus_ambience.mp3" />
-    <Content Include="Assets\car_door.mp3" />
-    <Content Include="Assets\car_drive.mp3" />
-    <Content Include="Assets\car_keys.mp3" />
-    <Content Include="Assets\car_reverse.mp3" />
-    <Content Include="Assets\car_running.mp3" />
-    <Content Include="Assets\car_start.mp3" />
-    <Content Include="Assets\door.mp3" />
-    <Content Include="Assets\droner_song.mp3" />
-    <Content Include="Assets\face_rub.mp3" />
-    <Content Include="Assets\footsteps_tile.mp3" />
-    <Content Include="Assets\hangars.mp3" />
-    <Content Include="Assets\nodelist.json" />
-    <Content Include="Assets\conscainceSpeechList.json" />
-    <Content Include="Assets\nodelist_copy.json" />
-    <Content Include="Assets\audiolist_copy.json" />
+    <Content Include="Assets\config\audiolist.json" />
+    <Content Include="Assets\audio\breathing_calm.mp3" />
+    <Content Include="Assets\audio\brushing_teeth.mp3" />
+    <Content Include="Assets\audio\brush_hair.mp3" />
+    <Content Include="Assets\audio\bus_ambience.mp3" />
+    <Content Include="Assets\audio\car_door.mp3" />
+    <Content Include="Assets\audio\car_drive.mp3" />
+    <Content Include="Assets\audio\car_keys.mp3" />
+    <Content Include="Assets\audio\car_reverse.mp3" />
+    <Content Include="Assets\audio\car_running.mp3" />
+    <Content Include="Assets\audio\car_start.mp3" />
+    <Content Include="Assets\audio\door.mp3" />
+    <Content Include="Assets\audio\droner_song.mp3" />
+    <Content Include="Assets\audio\face_rub.mp3" />
+    <Content Include="Assets\audio\footsteps_tile.mp3" />
+    <Content Include="Assets\audio\hangars.mp3" />
+    <Content Include="Assets\config\nodelist.json" />
+    <Content Include="Assets\config\conscainceSpeechList.json" />
+    <Content Include="Assets\config\test\nodelist_test.json" />
+    <Content Include="Assets\config\test\audiolist_test.json" />
     <None Include="Conscaince_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Musanif.mp3" />
-    <Content Include="Assets\out_of_bed.mp3" />
-    <Content Include="Assets\rain_interior.mp3" />
-    <Content Include="Assets\running_puddles.mp3" />
-    <Content Include="Assets\sheets_rustling.mp3" />
-    <Content Include="Assets\shower_dur.mp3" />
-    <Content Include="Assets\shower_off.mp3" />
-    <Content Include="Assets\shower_on.mp3" />
-    <Content Include="Assets\shower_running.mp3" />
-    <Content Include="Assets\tap_water.mp3" />
-    <Content Include="Assets\toilet.mp3" />
-    <Content Include="Assets\towel_dry.mp3" />
-    <Content Include="Assets\traffic_outside.mp3" />
-    <Content Include="Assets\umbrella_open.mp3" />
-    <Content Include="Assets\umbrella_rain.mp3" />
-    <Content Include="Assets\urinating.mp3" />
-    <Content Include="Assets\wear_jacket.mp3" />
-    <Content Include="Assets\wear_pants.mp3" />
+    <Content Include="Assets\audio\out_of_bed.mp3" />
+    <Content Include="Assets\audio\rain_interior.mp3" />
+    <Content Include="Assets\audio\running_puddles.mp3" />
+    <Content Include="Assets\audio\sheets_rustling.mp3" />
+    <Content Include="Assets\audio\shower_dur.mp3" />
+    <Content Include="Assets\audio\shower_off.mp3" />
+    <Content Include="Assets\audio\shower_on.mp3" />
+    <Content Include="Assets\audio\shower_running.mp3" />
+    <Content Include="Assets\audio\tap_water.mp3" />
+    <Content Include="Assets\audio\toilet.mp3" />
+    <Content Include="Assets\audio\towel_dry.mp3" />
+    <Content Include="Assets\audio\traffic_outside.mp3" />
+    <Content Include="Assets\audio\umbrella_open.mp3" />
+    <Content Include="Assets\audio\umbrella_rain.mp3" />
+    <Content Include="Assets\audio\urinating.mp3" />
+    <Content Include="Assets\audio\wear_jacket.mp3" />
+    <Content Include="Assets\audio\wear_pants.mp3" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -181,11 +180,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.CognitiveServices.Speech">
-      <Version>1.2.0</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.0.1</Version>
+      <Version>6.1.9</Version>
     </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
